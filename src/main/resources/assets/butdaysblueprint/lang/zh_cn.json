@@ -1,0 +1,137 @@
+{
+  "effect.butdaysblueprint.undying": "调停者的庇护",
+  "itemGroup.butdaysblueprint.blueprint_tab": " 蓝图",
+
+  "item.shift_up": "按住SHIFT键获取更多信息！",
+  "item.butdaysblueprint.arbiter_sword": "§3§l调停者之剑",
+  "item.arbiter_sword.description": "§5我手中之剑乃映照苍天之明镜，森罗万象之悲戚皆为我所断",
+  "item.arbiter_sword.tooltip": "右键降下闪电审判周围敌人，并获得短暂的调停者的庇护效果",
+  "item.butdaysblueprint.blueprint_anthology": "蓝图集",
+
+  "message.butdaysblueprint.already_clear": "你选择遗忘",
+  "message.butdaysblueprint.already_read": "§5§l奇迹不会闪烁两次",
+  "message.butdaysblueprint.not_qualified": "你还不够资格",
+
+  "butdaysblueprint.blueprint/arbiter_sword": "§3§l调停者之剑蓝图",
+  "butdaysblueprint.blueprint/arbiter_sword.description": "§m你够资格吗？",
+  "butdaysblueprint.blueprint/arbiter_sword.tooltip": "§e你见证了真正的力量",
+  "butdaysblueprint.blueprint/arbiter_sword.message": "§u不断地寻觅，直到她的到来",
+  "butdaysblueprint.blueprint/dominator": "§t支配者蓝图",
+  "butdaysblueprint.blueprint/dominator.description": "§s拿起它的只会是猎犬",
+  "butdaysblueprint.blueprint/dominator.tooltip": "§3犯罪指数§f0",
+  "butdaysblueprint.blueprint/dominator.message": "敬请期待",
+  "butdaysblueprint.blueprint/unknown": "未知蓝图",
+  "butdaysblueprint.blueprint/unknown.description": "§k未知蓝图吃掉了你的脑子",
+  "butdaysblueprint.blueprint/unknown.tooltip": "愿以此身，受你之痛",
+  "butdaysblueprint.blueprint/unknown.message": "只有创世之大能知道他的秘密",
+
+  "butdaysblueprint.sound.subtitle.arbiter_sword_charged": "调停者之剑充能完毕",
+  "butdaysblueprint.sound.subtitle.arbiter_sword_use": "使用调停者之剑",
+  "butdaysblueprint.sound.subtitle.zooey": "佐伊",
+
+  "gui.read": "§0阅读",
+  "gui.unlock": "§0以解锁",
+  "gui.banned": "§0因为世界意志的原因，配方消失了",
+
+  "butdaysblueprint.blueprint_anthology.title": "图鉴--蓝图",
+  "butdaysblueprint.title": "Blueprint Anthology",
+  "butdaysblueprint.author": "§othe arbiter",
+  "butdaysblueprint.title.preface": "§l序",
+  "butdaysblueprint.intro": "闪烁的星辰曾在银河之上流淌，自诩穷尽世间一切奥秘的人，在时间的长河中也追逐着星星陨落。找到那些散落在这个世上的知识，它们曾在遥远的过去熠熠生辉。\n不久后我们会再见，希望那时你不会站在这个世界的对立面。",
+  "butdaysblueprint.tip.viewBlueprint": "查看蓝图",
+
+  "butdaysblueprint.advancements.root.title": "隐匿的注视",
+  "butdaysblueprint.advancements.root.description": "开启寻找智慧碎片的征程",
+  "butdaysblueprint.advancements.the_embodiment_of_dream.title": "§d梦的具象",
+  "butdaysblueprint.advancements.the_embodiment_of_dream.description": "请呈我谢意",
+  "butdaysblueprint.advancements.transform.title": "§6蜕变",
+  "butdaysblueprint.advancements.transform.description": "见证你的力量",
+  "butdaysblueprint.advancements.enthroned.title": "§6封狼居胥",
+  "butdaysblueprint.advancements.enthroned.description": "天授旨意，无上权柄!",
+  "butdaysblueprint.advancements.the_beginning_of_the_journey.title": "旅途的开始",
+  "butdaysblueprint.advancements.the_beginning_of_the_journey.description": "犹如醍醐灌顶",
+  "butdaysblueprint.blueprint/nasa_workbench": "§5§lNASA工作台蓝图",
+  "butdaysblueprint.blueprint/nasa_workbench.description": "他们都说辐射火箭更新潮，但是我是传统派",
+  "butdaysblueprint.blueprint/nasa_workbench.tooltip": "说好minecraft是一款以剑与魔法为背景的游戏呢？",
+  "butdaysblueprint.blueprint/nasa_workbench.message": "够胆的话，就从天空巨舰中取来",
+
+  "butdaysblueprint.blueprint/drawing_ability": "§d绘画才能",
+  "butdaysblueprint.blueprint/drawing_ability.description": "痛苦会过去，美会留下",
+  "butdaysblueprint.blueprint/drawing_ability.tooltip": "§b就像戴上眼镜，你看到了更多",
+  "butdaysblueprint.blueprint/drawing_ability.message": "村庄悬赏获取",
+
+  "butdaysblueprint.blueprint/music_producer": "§e音乐制作人必修课",
+  "butdaysblueprint.blueprint/music_producer.description": "引导人走进灵魂的秘境",
+  "butdaysblueprint.blueprint/music_producer.tooltip": "§e你感受到韵律的脚步",
+  "butdaysblueprint.blueprint/music_producer.message": "在草甸奏响音乐之声",
+
+  "butdaysblueprint.blueprint/contaminated_parchment_paper": "§4被污染的手稿",
+  "butdaysblueprint.blueprint/contaminated_parchment_paper.description": "请告诫我真理",
+  "butdaysblueprint.blueprint/contaminated_parchment_paper.tooltip": "§5邪恶在你的脑海里发酵",
+  "butdaysblueprint.blueprint/contaminated_parchment_paper.message": "用血肉献祭",
+
+  "butdaysblueprint.blueprint/engineer_manual": "工程师手册",
+  "butdaysblueprint.blueprint/engineer_manual.description": "工程师手稿的进阶版",
+  "butdaysblueprint.blueprint/engineer_manual.tooltip": "啊啊啊要长脑子了",
+  "butdaysblueprint.blueprint/engineer_manual.message": "通过手稿合成",
+
+  "butdaysblueprint.blueprint/engineer_manuscript": "工程师手稿",
+  "butdaysblueprint.blueprint/engineer_manuscript.description": "将空手砍树的能力运用到制作上就好",
+  "butdaysblueprint.blueprint/engineer_manuscript.tooltip": "你的动手能力变得更强了",
+  "butdaysblueprint.blueprint/engineer_manuscript.message": "接取发明家委托获得，也可以去工坊中碰碰运气",
+
+  "butdaysblueprint.blueprint/bioprogram": "§2生物计划",
+  "butdaysblueprint.blueprint/bioprogram.description": "它们跃然纸上",
+  "butdaysblueprint.blueprint/bioprogram.tooltip": "克隆霸王龙变得不再困难",
+  "butdaysblueprint.blueprint/bioprogram.message": "",
+
+  "butdaysblueprint.blueprint/honey_yellowprint": "§6甜蜜蓝图",
+  "butdaysblueprint.blueprint/honey_yellowprint.description": "我们这张蓝图出自米奇林五星甜点师之手",
+  "butdaysblueprint.blueprint/honey_yellowprint.tooltip": "你通过咀嚼获得了这张蓝图的智慧",
+  "butdaysblueprint.blueprint/honey_yellowprint.message": "往蓝图上滴蜂蜜，就是这么简单",
+
+  "butdaysblueprint.blueprint/key_to_city": "§d城镇之钥",
+  "butdaysblueprint.blueprint/key_to_city.description": "你好像有点太城市化了",
+  "butdaysblueprint.blueprint/key_to_city.tooltip": "你进入了现代化的征程",
+  "butdaysblueprint.blueprint/key_to_city.message": "太阳首领曾经说过，敌人越是指责我，越是说明我对了......",
+
+  "butdaysblueprint.blueprint/residual_chapter_of_atlantis": "§3亚特兰蒂斯的遗失之章",
+  "butdaysblueprint.blueprint/residual_chapter_of_atlantis.description": "一个......海底的理想国？",
+  "butdaysblueprint.blueprint/residual_chapter_of_atlantis.tooltip": "繁荣存在于过去，如今只能得到沉默的回应",
+  "butdaysblueprint.blueprint/residual_chapter_of_atlantis.message": "这份奇迹由海底最深处的原住民传承至今",
+
+  "butdaysblueprint.blueprint/imperial_edict": "§c伪帝诏令",
+  "butdaysblueprint.blueprint/imperial_edict.description": "来自遥远过去的国王，如今只剩下他的阴影",
+  "butdaysblueprint.blueprint/imperial_edict.tooltip": "你品尝到了权力。。。。。。还有暴戾",
+  "butdaysblueprint.blueprint/imperial_edict.message": "听闻世界的终焉镇守着这份契约，遥望着他的归来",
+
+  "butdaysblueprint.blueprint/kitty_letter": "§d猫咪信笺",
+  "butdaysblueprint.blueprint/kitty_letter.description": "@喵喵~",
+  "butdaysblueprint.blueprint/kitty_letter.tooltip": "小动物更愿意亲近你了",
+  "butdaysblueprint.blueprint/kitty_letter.message": "小猫从床垫里找到的！",
+
+  "butdaysblueprint.blueprint/fading_in_the_shadow": "§0于暗影中凋零",
+  "butdaysblueprint.blueprint/fading_in_the_shadow.description": "请把你的心给我，与我为伍",
+  "butdaysblueprint.blueprint/fading_in_the_shadow.tooltip": "你带我的灵魂逃离出囚牢",
+  "butdaysblueprint.blueprint/fading_in_the_shadow.message": "击败亡者之王，净化他最深刻的怨念",
+
+  "butdaysblueprint.blueprint/wormholes_on_paper": "§3纸上虫洞",
+  "butdaysblueprint.blueprint/wormholes_on_paper.description": "不能用来回到过去",
+  "butdaysblueprint.blueprint/wormholes_on_paper.tooltip": "你的思绪飘向远方",
+  "butdaysblueprint.blueprint/wormholes_on_paper.message": "等你击败了主宰空间的虚空蠕虫，答案会揭晓",
+
+  "butdaysblueprint.blueprint/the_sands_of_time": "§6时之砂",
+  "butdaysblueprint.blueprint/the_sands_of_time.description": "沙...沙沙",
+  "butdaysblueprint.blueprint/the_sands_of_time.tooltip": "恍惚中从手指间滑落",
+  "butdaysblueprint.blueprint/the_sands_of_time.message": "企图扭转时间的人此时与时间一同入睡。。。在黄沙构成的棺椁中",
+
+  "butdaysblueprint.blueprint/burning_wish": "§6燃烧的愿景",
+  "butdaysblueprint.blueprint/burning_wish.description": "不熄的火焰凝固在刹那",
+  "butdaysblueprint.blueprint/burning_wish.tooltip": "手尖触碰的瞬间便已化为尘埃",
+  "butdaysblueprint.blueprint/burning_wish.message": "来自地狱领主临终前的余温",
+
+  "butdaysblueprint.blueprint/contaminated_code": "§4扭曲法典",
+  "butdaysblueprint.blueprint/contaminated_code.description": "哪有什么圣光，只有。。。力量！",
+  "butdaysblueprint.blueprint/contaminated_code.tooltip": "§o哼哼@哈%哈*哈哈。。。#",
+  "butdaysblueprint.blueprint/contaminated_code.message": "将邪恶的碎片拼凑"
+}

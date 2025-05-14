@@ -1,0 +1,107 @@
+{
+  "effect.butdaysblueprint.undying": "The Arbiter's Protection",
+  "itemGroup.butdaysblueprint.blueprint_tab": "Blueprint",
+
+  "item.shift_up": "Press SHIFT for more info!",
+  "item.butdaysblueprint.arbiter_sword": "§3§lThe Arbiter's Sword",
+  "item.arbiter_sword.description": "§5The sword in my hand is the bright mirror that reflects the sky, the sorrow of all things is cut by me",
+  "item.arbiter_sword.tooltip": "Right use the descending lightning to judge enemies around you, gain the refuge of a mediator",
+  "item.butdaysblueprint.blueprint_anthology": "Blueprint Collection",
+
+  "message.butdaysblueprint.already_clear": "You chose to forget",
+  "message.butdaysblueprint.already_read": "§5§lMiracles won't flash twice",
+  "message.butdaysblueprint.not_qualified": "You're not qualified",
+
+
+  "butdaysblueprint.blueprint/arbiter_sword": "§3§lThe Arbiter's Sword Blueprint",
+  "butdaysblueprint.blueprint/arbiter_sword.description": "§mAre you qualified?",
+  "butdaysblueprint.blueprint/arbiter_sword.tooltip": "§eYou witnessed the true power",
+  "butdaysblueprint.blueprint/arbiter_sword.message": "§uKeep searching until she arrives",
+  "butdaysblueprint.blueprint/dominator": "§tDominator Blueprint",
+  "butdaysblueprint.blueprint/dominator.description": "§sOnly hounds will pick it up",
+  "butdaysblueprint.blueprint/dominator.tooltip": "§3Crime Index§f0",
+  "butdaysblueprint.blueprint/dominator.message": "Not yet released",
+  "butdaysblueprint.blueprint/unknown": "Unknown Blueprint",
+  "butdaysblueprint.blueprint/unknown.description": "§kUnknown blueprint ate your brain",
+  "butdaysblueprint.blueprint/unknown.tooltip": "May this body, bear your pain",
+  "butdaysblueprint.blueprint/unknown.message": "Only the Creator knows his secret",
+
+  "butdaysblueprint.sound.subtitle.arbiter_sword_charged": "The Arbiter's Sword charged",
+  "butdaysblueprint.sound.subtitle.arbiter_sword_use": "Use The Arbiter's Sword",
+  "butdaysblueprint.sound.subtitle.zooey": "Zooey",
+
+  "gui.read": "§0Read",
+  "gui.unlock": "§0To unlock",
+  "gui.banned": "§0Because of the will of the world, recipe disappeared",
+
+  "butdaysblueprint.blueprint_anthology.title": "Illustrations--Blueprint",
+  "butdaysblueprint.title": "Blueprint Anthology",
+  "butdaysblueprint.author": "§othe arbiter",
+  "butdaysblueprint.title.preface": "§lPreface",
+  "butdaysblueprint.intro": "The twinkling stars once flowed above the Milky Way. People who claimed to exhaust all the mysteries of the world were also chasing the falling stars in the long river of time. Find those knowledge scattered in this world, they once shone in the distant past.\nWe will see you soon, I hope you won't stand on the opposite side of this world then.",
+  "butdaysblueprint.tip.viewBlueprint": "View Blueprint",
+
+  "butdaysblueprint.advancements.root.title": "Hidden Gaze",
+  "butdaysblueprint.advancements.root.description": "Start the journey to find the fragments of wisdom",
+  "butdaysblueprint.advancements.the_embodiment_of_dream.title": "§dEmbodiment of Dream",
+  "butdaysblueprint.advancements.the_embodiment_of_dream.description": "Let me express my gratitude",
+  "butdaysblueprint.advancements.transform.title": "§6Transform",
+  "butdaysblueprint.advancements.transform.description": "§6Witness your power",
+  "butdaysblueprint.advancements.enthroned.title": "§6Take the crown",
+  "butdaysblueprint.advancements.enthroned.description": "Divine mandate, supreme authority!",
+  "butdaysblueprint.advancements.the_beginning_of_the_journey.title": "The beginning of the journey",
+  "butdaysblueprint.advancements.the_beginning_of_the_journey.description": "It was like an Epiphany",
+  "butdaysblueprint.blueprint/nasa_workbench": "§5§lNASA Workbench Blueprint",
+  "butdaysblueprint.blueprint/nasa_workbench.description": "They all say radiation rockets are trendy, but I'm a traditionalist",
+  "butdaysblueprint.blueprint/nasa_workbench.tooltip": "You figured out how it works",
+  "butdaysblueprint.blueprint/nasa_workbench.message": "Maybe the meteorites that fell from the sky know something",
+
+  "butdaysblueprint.blueprint/drawing_ability": "§dDrawing Ability",
+  "butdaysblueprint.blueprint/drawing_ability.description": "Pain will pass, beauty will remain",
+  "butdaysblueprint.blueprint/drawing_ability.tooltip": "§bIt's like wearing glasses, you see more",
+  "butdaysblueprint.blueprint/drawing_ability.message": "Please the cartographer, he will teach you",
+
+  "butdaysblueprint.blueprint/music_producer": "§eMusic Producer Essentials",
+  "butdaysblueprint.blueprint/music_producer.description": "Actually we don't have to resort to violence",
+  "butdaysblueprint.blueprint/music_producer.tooltip": "§eYou learned the singing skills of mermaids",
+  "butdaysblueprint.blueprint/music_producer.message": "Go ask the mermaids for it, if they don't give it, beat them until they do",
+
+  "butdaysblueprint.blueprint/contaminated_parchment_paper": "§4Contaminated Manuscript",
+  "butdaysblueprint.blueprint/contaminated_parchment_paper.description": "Please tell me the truth",
+  "butdaysblueprint.blueprint/contaminated_parchment_paper.tooltip": "§5Evil is fermenting in your mind",
+  "butdaysblueprint.blueprint/contaminated_parchment_paper.message": "To be determined",
+
+  "butdaysblueprint.blueprint/engineer_manual": "Engineer Manual",
+  "butdaysblueprint.blueprint/engineer_manual.description": "An advanced version of the engineer manuscript",
+  "butdaysblueprint.blueprint/engineer_manual.tooltip": "Ahh I'm going to grow a brain",
+  "butdaysblueprint.blueprint/engineer_manual.message": "Crafted from the manuscript",
+
+  "butdaysblueprint.blueprint/engineer_manuscript": "Engineer Manuscript",
+  "butdaysblueprint.blueprint/engineer_manuscript.description": "Just apply the ability to chop trees with bare hands to crafting",
+  "butdaysblueprint.blueprint/engineer_manuscript.tooltip": "Your hands-on ability becomes stronger",
+  "butdaysblueprint.blueprint/engineer_manuscript.message": "Find the ancient ruins, pass the test and find the treasure",
+  "butdaysblueprint.blueprint/bioprogram": "§2Bio Program",
+  "butdaysblueprint.blueprint/bioprogram.description": "They are vivid on paper",
+  "butdaysblueprint.blueprint/bioprogram.tooltip": "Cloning a tyrannosaurus is no longer difficult",
+  "butdaysblueprint.blueprint/bioprogram.message": "To be determined",
+
+  "butdaysblueprint.blueprint/honey_yellowprint": "§6Sweet Blueprint",
+  "butdaysblueprint.blueprint/honey_yellowprint.description": "This blueprint is from a Michelin five-star dessert chef",
+  "butdaysblueprint.blueprint/honey_yellowprint.tooltip": "You gained the wisdom of this blueprint by chewing",
+  "butdaysblueprint.blueprint/honey_yellowprint.message": "Just drip honey on the blueprint, it's that simple",
+
+  "butdaysblueprint.blueprint/key_to_city": "Key to the City",
+  "butdaysblueprint.blueprint/key_to_city.description": "You seem a bit too urbanized",
+  "butdaysblueprint.blueprint/key_to_city.tooltip": "You have entered the modern journey",
+  "butdaysblueprint.blueprint/key_to_city.message": "To be determined",
+
+  "butdaysblueprint.blueprint/residual_chapter_of_atlantis": "§3The Lost Chapter of Atlantis",
+  "butdaysblueprint.blueprint/residual_chapter_of_atlantis.description": "A... utopia under the sea?",
+  "butdaysblueprint.blueprint/residual_chapter_of_atlantis.tooltip": "Prosperity existed in the past, but now only silence answers",
+  "butdaysblueprint.blueprint/residual_chapter_of_atlantis.message": "How did I have such a strange dream, a fish handed me this ancient treasure",
+
+  "butdaysblueprint.blueprint/imperial_edict": "§cFake imperial edict",
+  "butdaysblueprint.blueprint/imperial_edict.description": "The king of the distant past is now only a shadow of him",
+  "butdaysblueprint.blueprint/imperial_edict.tooltip": "You tasted power... And violent",
+  "butdaysblueprint.blueprint/imperial_edict.message": "Heard the world was ending and I still had that power"
+}

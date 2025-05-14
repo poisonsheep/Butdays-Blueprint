@@ -1,0 +1,29 @@
+{
+  "parent": "butdaysblueprint:root",
+  "display": {
+    "icon": {
+      "item": "butdaysblueprint:blueprint"
+    },
+    "title": {
+      "translate": "butdaysblueprint.advancements.the_beginning_of_the_journey.title"
+    },
+    "description": {
+      "translate": "butdaysblueprint.advancements.the_beginning_of_the_journey.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "first_read": {
+      "trigger": "butdaysblueprint:first_read",
+      "conditions": {}
+    }
+  },
+  "requirements": [
+    [
+      "first_read"
+    ]
+  ]
+}

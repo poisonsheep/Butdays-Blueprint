@@ -1,0 +1,27 @@
+{
+  "type": "butdaysblueprint:blueprint",
+  "blueprint": "butdaysblueprint:blueprint/engineer_manual",
+  "recipe":{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "CCS",
+      "CCS",
+      "CCS"
+    ],
+    "key": {
+      "S": [
+        {
+          "item": "minecraft:string"
+        }
+      ],
+      "C": [
+        {
+          "item": "minecraft:white_carpet"
+        }
+      ]
+    },
+    "result": {
+      "item": "minecraft:white_carpet"
+    }
+  }
+}

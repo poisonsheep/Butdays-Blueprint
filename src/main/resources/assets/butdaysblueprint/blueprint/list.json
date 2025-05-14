@@ -1,0 +1,22 @@
+{
+  "blueprints": [
+    "butdaysblueprint:blueprint/unknown",
+    "butdaysblueprint:blueprint/nasa_workbench",
+    "butdaysblueprint:blueprint/engineer_manual",
+    "butdaysblueprint:blueprint/engineer_manuscript",
+    "butdaysblueprint:blueprint/contaminated_code",
+    "butdaysblueprint:blueprint/contaminated_parchment_paper",
+    "butdaysblueprint:blueprint/fading_in_the_shadow",
+    "butdaysblueprint:blueprint/residual_chapter_of_atlantis",
+    "butdaysblueprint:blueprint/burning_wish",
+    "butdaysblueprint:blueprint/drawing_ability",
+    "butdaysblueprint:blueprint/music_producer",
+    "butdaysblueprint:blueprint/honey_yellowprint",
+    "butdaysblueprint:blueprint/key_to_city",
+    "butdaysblueprint:blueprint/imperial_edict",
+    "butdaysblueprint:blueprint/kitty_letter",
+    "butdaysblueprint:blueprint/bioprogram",
+    "butdaysblueprint:blueprint/the_sands_of_time",
+    "butdaysblueprint:blueprint/wormholes_on_paper"
+  ]
+}
