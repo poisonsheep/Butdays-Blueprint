@@ -24,6 +24,7 @@ public class TabRegistry {
     @SubscribeEvent
     public static void addCreative(BuildCreativeModeTabContentsEvent event) {
         if (event.getTab() == TabRegistry.BLUEPRINT_TAB.get()) {
+            event.accept(new ItemStack(ItemRegistry.BLUEPRINT_ANTHOLOGY.get()));
             for (String blueprint : BlueprintList.INSTANCE.blueprints) {
                 ItemStack itemStack = new ItemStack(ItemRegistry.BLUEPRINT.get());
                 Blueprint.setBluePrint(itemStack, new ResourceLocation(blueprint));
