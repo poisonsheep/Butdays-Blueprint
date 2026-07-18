@@ -9,6 +9,7 @@ import net.minecraftforge.registries.RegistryObject;
 public class ItemRegistry {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, ButdaysBlueprint.MODID);
 
+    public static final RegistryObject<Item> BLUEPRINT_ANTHOLOGY = ITEMS.register("blueprint_anthology",()->new BlueprintAnthology());
     public static final RegistryObject<Item> BLUEPRINT = ITEMS.register("blueprint",()->new Blueprint());
 
 }
