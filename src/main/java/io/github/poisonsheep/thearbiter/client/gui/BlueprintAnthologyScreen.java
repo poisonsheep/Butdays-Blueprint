@@ -1,6 +1,7 @@
 package io.github.poisonsheep.thearbiter.client.gui;
 
 import io.github.poisonsheep.thearbiter.ButdaysBlueprint;
+import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.PageButton;
 import net.minecraft.network.chat.Component;
@@ -52,8 +53,10 @@ public class BlueprintAnthologyScreen extends BasicBookScreen {
     protected void writeTitle(GuiGraphics guiGraphics, Component component, int x, int y, float scale) {
         guiGraphics.pose().pushPose();
         guiGraphics.pose().translate(x, y, 0);
-        guiGraphics.pose().scale(scale, scale, scale);
-        guiGraphics.drawString(this.font, component, 0, 0, 000000);
+        guiGraphics.pose().scale(scale, scale, 1.0F);
+        this.font.drawInBatch(component.getVisualOrderText(), 0, 0, 0x000000, false,
+            guiGraphics.pose().last().pose(), guiGraphics.bufferSource(),
+            Font.DisplayMode.NORMAL, 0, 15728880);
         guiGraphics.pose().popPose();
     }
 }

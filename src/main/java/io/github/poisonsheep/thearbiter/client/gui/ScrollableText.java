@@ -3,6 +3,7 @@ package io.github.poisonsheep.thearbiter.client.gui;
 import com.google.common.collect.ImmutableList;
 import io.github.poisonsheep.thearbiter.util.GuiUtil;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.ContainerObjectSelectionList;
 import net.minecraft.client.gui.components.events.GuiEventListener;
@@ -56,7 +57,12 @@ public class ScrollableText extends BlueprintContainerObjectSelectionList<Scroll
         @Override
         public void render(GuiGraphics guiGraphics, int pIndex, int pTop, int pLeft, int rowWidth, int pHeight, int pMouseX, int pMouseY, boolean pIsMouseOver, float pPartialTick) {
             float textHeightOffset = (float) (pTop + pHeight - Minecraft.getInstance().font.lineHeight);
-            guiGraphics.drawString(Minecraft.getInstance().font, this.text, (pLeft) + rowWidth - this.textMaxWidth, (int) textHeightOffset, this.textColor);
+            guiGraphics.pose().pushPose();
+            guiGraphics.pose().translate(pLeft + rowWidth - this.textMaxWidth, textHeightOffset, 0);
+            Minecraft.getInstance().font.drawInBatch(this.text.getVisualOrderText(), 0, 0, this.textColor, false,
+                guiGraphics.pose().last().pose(), guiGraphics.bufferSource(),
+                Font.DisplayMode.NORMAL, 0, 15728880);
+            guiGraphics.pose().popPose();
         }
 
         @Override
