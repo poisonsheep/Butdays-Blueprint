@@ -34,6 +34,10 @@
   "gui.unlock": "§0To unlock",
   "gui.banned": "§0Because of the will of the world, recipe disappeared",
 
+  "jei.butdaysblueprint.blueprint_required": "§cRead this blueprint to unlock the recipe",
+  "jei.butdaysblueprint.recipe_locked": "§cRecipe locked",
+  "jei.butdaysblueprint.recipe_unlocked": "§aRecipe unlocked",
+
   "butdaysblueprint.blueprint_anthology.title": "Illustrations--Blueprint",
   "butdaysblueprint.title": "Blueprint Anthology",
   "butdaysblueprint.author": "§othe arbiter",

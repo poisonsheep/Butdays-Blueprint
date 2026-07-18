@@ -33,6 +33,10 @@
   "gui.unlock": "§0以解锁",
   "gui.banned": "§0因为世界意志的原因，配方消失了",
 
+  "jei.butdaysblueprint.blueprint_required": "§c需先阅读该蓝图才可解锁合成",
+  "jei.butdaysblueprint.recipe_locked": "§c配方未解锁",
+  "jei.butdaysblueprint.recipe_unlocked": "§a配方已解锁",
+
   "butdaysblueprint.blueprint_anthology.title": "图鉴--蓝图",
   "butdaysblueprint.title": "Blueprint Anthology",
   "butdaysblueprint.author": "§othe arbiter",
