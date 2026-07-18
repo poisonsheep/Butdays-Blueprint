@@ -85,7 +85,7 @@ public class BlueprintInformationScreen extends BasicBookScreen {
     @Override
     public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTick) {
         super.render(guiGraphics, mouseX, mouseY, partialTick);
-        putTexture(guiGraphics, BlueprintAnthologyScreen.BOOK_TEXTURES, this.leftPos + IMAGE_WIDTH / 2 + 10, this.bottomPos + 42, 0, 128, 110, 107);
+        putTexture(guiGraphics, BlueprintAnthologyScreen.BOOK_TEXTURES, this.leftPos + IMAGE_WIDTH / 2 + 10, this.bottomPos + 42, 0, 128, 110, 105);
         putTexture(guiGraphics, BlueprintAnthologyScreen.BOOK_TEXTURES, this.leftPos + 40, this.bottomPos + 36, 64, 0, 64, 64);
         putMap(guiGraphics);
         guiGraphics.drawString(Minecraft.getInstance().font, this.getTitle(), this.leftPos + Math.round(this.IMAGE_WIDTH / 4) - 24, this.bottomPos + 24, 1);
