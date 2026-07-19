@@ -1,0 +1,21 @@
+{
+  "_comment": "Example: dual-blueprint recipe — atlantis + engineer_manual unlocks trident crafting",
+  "type": "butdaysblueprint:blueprint",
+  "blueprints": [
+    "butdaysblueprint:blueprint/residual_chapter_of_atlantis",
+    "butdaysblueprint:blueprint/engineer_manual"
+  ],
+  "recipe": {
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      " PP",
+      " SP",
+      "S  "
+    ],
+    "key": {
+      "P": { "item": "minecraft:prismarine_shard" },
+      "S": { "item": "minecraft:prismarine_crystals" }
+    },
+    "result": { "item": "minecraft:trident" }
+  }
+}

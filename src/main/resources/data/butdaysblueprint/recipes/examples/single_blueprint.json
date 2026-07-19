@@ -1,0 +1,14 @@
+{
+  "_comment": "Example: single-blueprint recipe — drawing_ability unlocks name tag crafting",
+  "type": "butdaysblueprint:blueprint",
+  "blueprint": "butdaysblueprint:blueprint/drawing_ability",
+  "recipe": {
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+      { "item": "minecraft:paper" },
+      { "item": "minecraft:string" },
+      { "item": "minecraft:iron_nugget" }
+    ],
+    "result": { "item": "minecraft:name_tag" }
+  }
+}

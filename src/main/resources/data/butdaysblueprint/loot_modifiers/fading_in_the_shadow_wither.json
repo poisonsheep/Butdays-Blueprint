@@ -1,0 +1,6 @@
+{
+  "type": "butdaysblueprint:blueprint_modifier",
+  "conditions": [{ "condition": "forge:loot_table_id", "loot_table_id": "minecraft:entities/wither" }],
+  "item": "butdaysblueprint:blueprint",
+  "blueprint": "butdaysblueprint:blueprint/fading_in_the_shadow"
+}

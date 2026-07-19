@@ -1,0 +1,9 @@
+{
+  "type": "butdaysblueprint:blueprint_modifier",
+  "conditions": [
+    { "condition": "forge:loot_table_id", "loot_table_id": "minecraft:gameplay/hero_of_the_village/cleric_gift" },
+    { "condition": "minecraft:random_chance", "chance": 0.30 }
+  ],
+  "item": "butdaysblueprint:blueprint",
+  "blueprint": "butdaysblueprint:blueprint/key_to_city"
+}

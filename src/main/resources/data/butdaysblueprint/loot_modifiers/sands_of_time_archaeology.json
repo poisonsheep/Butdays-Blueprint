@@ -1,0 +1,9 @@
+{
+  "type": "butdaysblueprint:blueprint_modifier",
+  "conditions": [
+    { "condition": "forge:loot_table_id", "loot_table_id": "minecraft:archaeology/desert_well" },
+    { "condition": "minecraft:random_chance", "chance": 0.08 }
+  ],
+  "item": "butdaysblueprint:blueprint",
+  "blueprint": "butdaysblueprint:blueprint/the_sands_of_time"
+}

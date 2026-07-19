@@ -1,0 +1,9 @@
+{
+  "type": "butdaysblueprint:blueprint_modifier",
+  "conditions": [
+    { "condition": "forge:loot_table_id", "loot_table_id": "minecraft:entities/evoker" },
+    { "condition": "minecraft:random_chance", "chance": 0.05 }
+  ],
+  "item": "butdaysblueprint:blueprint",
+  "blueprint": "butdaysblueprint:blueprint/contaminated_parchment_paper"
+}

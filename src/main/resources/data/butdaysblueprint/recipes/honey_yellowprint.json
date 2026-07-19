@@ -1,0 +1,12 @@
+{
+  "_comment": "Any blueprint + honey bottle = Sweet Blueprint",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    { "item": "butdaysblueprint:blueprint" },
+    { "item": "minecraft:honey_bottle" }
+  ],
+  "result": {
+    "item": "butdaysblueprint:blueprint",
+    "nbt": "{blueprint:\"butdaysblueprint:blueprint/honey_yellowprint\"}"
+  }
+}

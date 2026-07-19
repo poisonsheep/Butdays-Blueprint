@@ -1,0 +1,9 @@
+{
+  "type": "butdaysblueprint:blueprint_modifier",
+  "conditions": [
+    { "condition": "forge:loot_table_id", "loot_table_id": "minecraft:chests/bastion_treasure" },
+    { "condition": "minecraft:random_chance", "chance": 0.15 }
+  ],
+  "item": "butdaysblueprint:blueprint",
+  "blueprint": "butdaysblueprint:blueprint/burning_wish"
+}

@@ -1,0 +1,22 @@
+{
+  "_comment": "Example: triple-blueprint recipe — 3 blueprints required to craft wither skeleton skulls",
+  "type": "butdaysblueprint:blueprint",
+  "blueprints": [
+    "butdaysblueprint:blueprint/contaminated_code",
+    "butdaysblueprint:blueprint/fading_in_the_shadow",
+    "butdaysblueprint:blueprint/burning_wish"
+  ],
+  "recipe": {
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "BBB",
+      "BSB",
+      "BBB"
+    ],
+    "key": {
+      "B": { "item": "minecraft:bone" },
+      "S": { "item": "minecraft:soul_sand" }
+    },
+    "result": { "item": "minecraft:wither_skeleton_skull", "count": 3 }
+  }
+}

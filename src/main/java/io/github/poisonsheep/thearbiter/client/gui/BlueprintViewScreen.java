@@ -4,6 +4,8 @@ import io.github.poisonsheep.thearbiter.Item.Blueprint;
 import io.github.poisonsheep.thearbiter.Item.ItemRegistry;
 import io.github.poisonsheep.thearbiter.ButdaysBlueprint;
 import io.github.poisonsheep.thearbiter.client.blueprint.BlueprintList;
+import io.github.poisonsheep.thearbiter.client.misc.RecipeData;
+import io.github.poisonsheep.thearbiter.recipe.RecipeDataList;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.Screen;
@@ -14,7 +16,9 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 
 import java.util.List;
+import java.util.Set;
 import java.util.function.Consumer;
+import java.util.stream.Collectors;
 
 public class BlueprintViewScreen extends BasicBookScreen {
 
@@ -75,7 +79,13 @@ public class BlueprintViewScreen extends BasicBookScreen {
     }
 
     private void createMenu(int rowLength, int columnLength) {
-        List<String> blueprints = BlueprintList.INSTANCE.blueprints;
+        Set<String> blueprintsWithRecipes = RecipeDataList.INSTANCE.recipeData.stream()
+                .map(RecipeData::getBlueprint)
+                .collect(Collectors.toSet());
+
+        List<String> blueprints = BlueprintList.INSTANCE.blueprints.stream()
+                .filter(blueprintsWithRecipes::contains)
+                .collect(Collectors.toList());
         this.maxPagePairCount = (blueprints.size()/ (rowLength * columnLength)) / 2 + 1;
         items = new BlueprintWidget[maxPagePairCount][2][columnLength][rowLength];
         int registryIdx = 0;
@@ -118,6 +128,7 @@ public class BlueprintViewScreen extends BasicBookScreen {
                 if (BlueprintWidget.hasAdditonalInfo) {
                     tooltipLines.add(1, Component.literal("Click for more info"));
                 }
+                tooltipLines.add(Component.translatable("gui.help.list"));
                 guiGraphics.renderComponentTooltip(this.font, tooltipLines, mouseX, mouseY);
             }
         });

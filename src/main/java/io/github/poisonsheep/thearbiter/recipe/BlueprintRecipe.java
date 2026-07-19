@@ -15,24 +15,30 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.common.ForgeHooks;
 import net.minecraftforge.common.crafting.IShapedRecipe;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
 public class BlueprintRecipe implements CraftingRecipe {
     private final ResourceLocation id;
-    private final String blueprint;
+    private final List<String> blueprints;
     private final CraftingRecipe craftingRecipe;
     private int width;
     private int height;
 
-    public BlueprintRecipe(ResourceLocation id, String blueprint, CraftingRecipe craftingRecipe){
+    public BlueprintRecipe(ResourceLocation id, List<String> blueprints, CraftingRecipe craftingRecipe){
         this.id = id;
-        this.blueprint = blueprint;
+        this.blueprints = Collections.unmodifiableList(blueprints);
         this.craftingRecipe = craftingRecipe;
         if(craftingRecipe instanceof ShapedRecipe) {
             this.width = ((IShapedRecipe<CraftingContainer>) craftingRecipe).getRecipeWidth();
             this.height = ((IShapedRecipe<CraftingContainer>) craftingRecipe).getRecipeHeight();
         }
+    }
+
+    /** Backward-compat constructor for single blueprint */
+    public BlueprintRecipe(ResourceLocation id, String blueprint, CraftingRecipe craftingRecipe){
+        this(id, List.of(blueprint), craftingRecipe);
     }
 
     @Override
@@ -91,8 +97,14 @@ public class BlueprintRecipe implements CraftingRecipe {
         return craftingRecipe.category();
     }
 
+    /** @return first blueprint (for backward compat) */
     public String getBlueprint(){
-        return blueprint;
+        return blueprints.get(0);
+    }
+
+    /** @return all required blueprints */
+    public List<String> getBlueprints() {
+        return blueprints;
     }
 
     public CraftingRecipe getRecipe() {
@@ -106,13 +118,15 @@ public class BlueprintRecipe implements CraftingRecipe {
         return true;
     }
     public boolean isAbleToCraft(Player player){
-//        Player player = ForgeEvent.player;
         if(player != null) {
             PlayerBlueprint playerBlueprint = player.getCapability(PlayerBlueprintProvider.PLAYER_BLUEPRINT_CAPABILITY).orElseThrow(() -> new RuntimeException("Player does not have PlayerBlueprint capability"));
-            List<String> blueprints = playerBlueprint.getBlueprints();
-            if(blueprints.contains(blueprint)) {
-                return true;
+            List<String> learned = playerBlueprint.getBlueprints();
+            for (String bp : blueprints) {
+                if (!learned.contains(bp)) {
+                    return false;
+                }
             }
+            return true;
         }
         return false;
     }

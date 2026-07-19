@@ -2,6 +2,7 @@ package io.github.poisonsheep.thearbiter.client.gui;
 
 import io.github.poisonsheep.thearbiter.Item.Blueprint;
 import io.github.poisonsheep.thearbiter.Item.ItemRegistry;
+import io.github.poisonsheep.thearbiter.client.blueprint.BlueprintList;
 import io.github.poisonsheep.thearbiter.recipe.RecipeDataList;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
@@ -19,7 +20,9 @@ import net.minecraft.world.item.crafting.ShapedRecipe;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 import java.util.function.Consumer;
+import java.util.stream.Collectors;
 
 public class BlueprintInformationScreen extends BasicBookScreen {
 
@@ -33,6 +36,10 @@ public class BlueprintInformationScreen extends BasicBookScreen {
     int page;
     int toolTipMaxWidth;
     private boolean renderRecipe;
+    /** filtered list of blueprints with recipes, and current index for navigation */
+    private static List<String> navigableBlueprints;
+    private int currentBlueprintIndex;
+
     public BlueprintInformationScreen(String blueprint, Screen parent) {
         super(Component.translatable("butdaysblueprint.blueprint_anthology.title"));
         this.toolTipMaxWidth = (IMAGE_WIDTH / 2) - 20;
@@ -41,7 +48,18 @@ public class BlueprintInformationScreen extends BasicBookScreen {
         recipes = getRecipe(blueprint);
         renderRecipe = !recipes.isEmpty();
         message = Component.translatable(blueprint.replace(":", ".") + ".message");
+        // build the filtered list on first open
+        if (navigableBlueprints == null) {
+            Set<String> withRecipes = RecipeDataList.INSTANCE.recipeData.stream()
+                    .map(io.github.poisonsheep.thearbiter.client.misc.RecipeData::getBlueprint)
+                    .collect(Collectors.toSet());
+            navigableBlueprints = BlueprintList.INSTANCE.blueprints.stream()
+                    .filter(withRecipes::contains)
+                    .collect(Collectors.toList());
+        }
+        this.currentBlueprintIndex = navigableBlueprints.indexOf(blueprint);
     }
+
     private static void forEach(ItemWidget[][] widgets, Consumer<ItemWidget> widget) {
         for (ItemWidget[] widgetsPage : widgets) {
             for(ItemWidget itemWidget : widgetsPage) {
@@ -70,6 +88,24 @@ public class BlueprintInformationScreen extends BasicBookScreen {
             }, true);
             this.addRenderableWidget(pageForward);
         }
+
+        // blueprint navigation: previous / next
+        if (navigableBlueprints.size() > 1) {
+            if (currentBlueprintIndex > 0) {
+                PageButton prev = new PageButton(this.leftPos + 18, this.topPos - 36, false, button -> {
+                    String prevBp = navigableBlueprints.get(currentBlueprintIndex - 1);
+                    this.minecraft.setScreen(new BlueprintInformationScreen(prevBp, parent));
+                }, true);
+                this.addRenderableWidget(prev);
+            }
+            if (currentBlueprintIndex < navigableBlueprints.size() - 1) {
+                PageButton next = new PageButton(this.rightPos - 42, this.topPos - 36, true, button -> {
+                    String nextBp = navigableBlueprints.get(currentBlueprintIndex + 1);
+                    this.minecraft.setScreen(new BlueprintInformationScreen(nextBp, parent));
+                }, true);
+                this.addRenderableWidget(next);
+            }
+        }
     }
 
     protected void putMap(GuiGraphics guiGraphics) {
@@ -91,6 +127,13 @@ public class BlueprintInformationScreen extends BasicBookScreen {
         guiGraphics.drawString(Minecraft.getInstance().font, this.getTitle(), this.leftPos + Math.round(this.IMAGE_WIDTH / 4) - 24, this.bottomPos + 24, 1);
         if(renderRecipe) {
             renderRecipe(guiGraphics, mouseX, mouseY);
+            // tooltip on recipe page flip button (回形针)
+            int flipX = this.leftPos + IMAGE_WIDTH / 2 + 93;
+            int flipY = this.bottomPos + 130;
+            if (mouseX >= flipX && mouseX < flipX + 23 && mouseY >= flipY && mouseY < flipY + 23) {
+                guiGraphics.renderTooltip(this.font,
+                        Component.translatable("gui.help.detail"), mouseX, mouseY);
+            }
         }
     }
 

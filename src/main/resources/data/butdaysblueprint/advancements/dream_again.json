@@ -1,0 +1,18 @@
+{
+  "display": {
+    "icon": { "item": "minecraft:book" },
+    "title": { "translate": "butdaysblueprint.advancements.dream_again.title" },
+    "description": { "translate": "butdaysblueprint.advancements.dream_again.description" },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "butdaysblueprint:story/first_sleep",
+  "criteria": {
+    "dream": {
+      "trigger": "butdaysblueprint:dream_again"
+    }
+  },
+  "requirements": [["dream"]]
+}

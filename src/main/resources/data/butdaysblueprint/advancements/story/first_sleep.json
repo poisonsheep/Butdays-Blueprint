@@ -1,0 +1,21 @@
+{
+  "display": {
+    "icon": { "item": "butdaysblueprint:blueprint_anthology" },
+    "title": { "translate": "butdaysblueprint.advancements.anthology.title" },
+    "description": { "translate": "butdaysblueprint.advancements.anthology.description" },
+    "background": "minecraft:textures/block/obsidian.png",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "butdaysblueprint:root",
+  "criteria": {
+    "slept": {
+      "trigger": "minecraft:slept_in_bed"
+    }
+  },
+  "requirements": [["slept"]],
+  "rewards": {
+    "loot": ["butdaysblueprint:grant/anthology_on_first_sleep"]
+  }
+}

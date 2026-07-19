@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "type": "forge:partial_nbt",
+      "item": "butdaysblueprint:blueprint",
+      "nbt": "{blueprint:\"butdaysblueprint:blueprint/engineer_manuscript\"}"
+    },
+    {
+      "type": "forge:partial_nbt",
+      "item": "butdaysblueprint:blueprint",
+      "nbt": "{blueprint:\"butdaysblueprint:blueprint/engineer_manuscript\"}"
+    },
+    {
+      "type": "forge:partial_nbt",
+      "item": "butdaysblueprint:blueprint",
+      "nbt": "{blueprint:\"butdaysblueprint:blueprint/engineer_manuscript\"}"
+    },
+    {
+      "item": "minecraft:leather"
+    }
+  ],
+  "result": {
+    "item": "butdaysblueprint:blueprint",
+    "nbt": "{blueprint:\"butdaysblueprint:blueprint/engineer_manual\"}"
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "locks": {
+    "butdaysblueprint:blueprint/engineer_manuscript": [
+      "minecraft:iron_pickaxe",
+      "minecraft:iron_axe",
+      "minecraft:iron_shovel",
+      "minecraft:iron_hoe",
+      "minecraft:iron_sword",
+      "minecraft:iron_helmet",
+      "minecraft:iron_chestplate",
+      "minecraft:iron_leggings",
+      "minecraft:iron_boots",
+      "minecraft:shield"
+    ],
+    "butdaysblueprint:blueprint/engineer_manual": [
+      "minecraft:diamond_pickaxe",
+      "minecraft:diamond_axe",
+      "minecraft:diamond_shovel",
+      "minecraft:diamond_hoe",
+      "minecraft:diamond_sword",
+      "minecraft:diamond_helmet",
+      "minecraft:diamond_chestplate",
+      "minecraft:diamond_leggings",
+      "minecraft:diamond_boots"
+    ],
+    "butdaysblueprint:blueprint/nasa_workbench": [
+      "minecraft:observer",
+      "minecraft:repeater",
+      "minecraft:comparator",
+      "minecraft:dispenser",
+      "minecraft:dropper",
+      "minecraft:daylight_detector"
+    ],
+    "butdaysblueprint:blueprint/contaminated_parchment_paper": [
+      "minecraft:enchanting_table",
+      "minecraft:bookshelf",
+      "minecraft:brewing_stand",
+      "minecraft:cauldron"
+    ],
+    "butdaysblueprint:blueprint/contaminated_code": [
+      "minecraft:ender_eye"
+    ],
+    "butdaysblueprint:blueprint/bioprogram": [
+      "minecraft:lead",
+      "minecraft:hay_block"
+    ],
+    "butdaysblueprint:blueprint/drawing_ability": [
+      "minecraft:painting",
+      "minecraft:item_frame",
+      "minecraft:armor_stand",
+      "minecraft:loom"
+    ],
+    "butdaysblueprint:blueprint/music_producer": [
+      "minecraft:jukebox",
+      "minecraft:note_block"
+    ],
+    "butdaysblueprint:blueprint/honey_yellowprint": [
+      "minecraft:cake",
+      "minecraft:pumpkin_pie",
+      "minecraft:cookie",
+      "minecraft:honey_bottle"
+    ],
+    "butdaysblueprint:blueprint/key_to_city": [
+      "minecraft:bell",
+      "minecraft:lectern",
+      "minecraft:composter",
+      "minecraft:cartography_table",
+      "minecraft:fletching_table"
+    ],
+    "butdaysblueprint:blueprint/imperial_edict": [],
+    "butdaysblueprint:blueprint/kitty_letter": [],
+    "butdaysblueprint:blueprint/fading_in_the_shadow": [
+      "minecraft:soul_torch",
+      "minecraft:soul_lantern",
+      "minecraft:soul_campfire"
+    ],
+    "butdaysblueprint:blueprint/residual_chapter_of_atlantis": [
+      "minecraft:conduit",
+      "minecraft:sea_lantern",
+      "minecraft:turtle_helmet"
+    ],
+    "butdaysblueprint:blueprint/the_sands_of_time": [
+      "minecraft:clock"
+    ],
+    "butdaysblueprint:blueprint/wormholes_on_paper": [
+      "minecraft:ender_chest"
+    ],
+    "butdaysblueprint:blueprint/burning_wish": [
+      "minecraft:fire_charge",
+      "minecraft:magma_cream"
+    ],
+    "butdaysblueprint:blueprint/unknown": []
+  },
+  "multi_locks": [
+    {
+      "blueprints": [
+        "butdaysblueprint:blueprint/contaminated_code",
+        "butdaysblueprint:blueprint/fading_in_the_shadow"
+      ],
+      "recipes": [
+        "minecraft:beacon"
+      ]
+    }
+  ]
+}

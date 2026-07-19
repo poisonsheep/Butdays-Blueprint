@@ -1,5 +1,7 @@
 package io.github.poisonsheep.thearbiter.recipe;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import io.github.poisonsheep.thearbiter.client.misc.RecipeData;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -14,31 +16,51 @@ import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class BlueprintSerializer implements RecipeSerializer<BlueprintRecipe> {
     @Override
     public BlueprintRecipe fromJson(ResourceLocation id, JsonObject json) {
-        String blueprint = GsonHelper.getAsString(json, "blueprint");
+        List<String> blueprints = new ArrayList<>();
+        // support both "blueprint" (single string, backward compat) and "blueprints" (array)
+        if (json.has("blueprints")) {
+            JsonArray arr = GsonHelper.getAsJsonArray(json, "blueprints");
+            for (JsonElement e : arr) {
+                blueprints.add(e.getAsString());
+            }
+        } else {
+            blueprints.add(GsonHelper.getAsString(json, "blueprint"));
+        }
+
         Recipe<?> recipe = RecipeManager.fromJson(id, GsonHelper.getAsJsonObject(json, "recipe"));
-        RecipeData data = new RecipeData(blueprint, recipe);
-        RecipeDataList.INSTANCE.recipeData.add(data);
-        return new BlueprintRecipe(id, blueprint, (CraftingRecipe) recipe);
+        // register under each blueprint so anthology search finds it
+        for (String bp : blueprints) {
+            RecipeData data = new RecipeData(bp, recipe);
+            RecipeDataList.INSTANCE.recipeData.add(data);
+        }
+        return new BlueprintRecipe(id, blueprints, (CraftingRecipe) recipe);
     }
 
-    //这部分代码用于网络数据包
     @Nullable
     @Override
     public BlueprintRecipe fromNetwork(ResourceLocation blueprintId, FriendlyByteBuf buffer) {
-        //顺序非常重要
         ResourceLocation innerRecipeId = buffer.readResourceLocation();
         ResourceLocation recipeSerializerId = buffer.readResourceLocation();
         RecipeSerializer<?> value = ForgeRegistries.RECIPE_SERIALIZERS.getValue(recipeSerializerId);
         Recipe<?> recipe = value.fromNetwork(innerRecipeId, buffer);
-        String blueprint = buffer.readUtf();
-        RecipeData data = new RecipeData(blueprint, recipe);
-        if(!RecipeDataList.INSTANCE.recipeData.contains(data)) {
-            RecipeDataList.INSTANCE.recipeData.add(data);
+
+        int count = buffer.readVarInt();
+        List<String> blueprints = new ArrayList<>();
+        for (int i = 0; i < count; i++) {
+            String bp = buffer.readUtf();
+            blueprints.add(bp);
+            RecipeData data = new RecipeData(bp, recipe);
+            if (!RecipeDataList.INSTANCE.recipeData.contains(data)) {
+                RecipeDataList.INSTANCE.recipeData.add(data);
+            }
         }
-        return new BlueprintRecipe(blueprintId, blueprint, (CraftingRecipe) recipe);
+        return new BlueprintRecipe(blueprintId, blueprints, (CraftingRecipe) recipe);
     }
 
     @Override
@@ -49,14 +71,19 @@ public class BlueprintSerializer implements RecipeSerializer<BlueprintRecipe> {
         }
         ResourceLocation serializerKey = BuiltInRegistries.RECIPE_SERIALIZER.getKey(recipe1.getSerializer());
         if(serializerKey == null) {
-
             throw new IllegalArgumentException("Unable to serialize a recipe serializer without an id: " + recipe1.getSerializer());
         }
         buffer.writeResourceLocation(recipe1.getId());
         buffer.writeResourceLocation(serializerKey);
         recipe1.getSerializer().toNetwork(buffer, cast(recipe1));
-        buffer.writeUtf(blueprintRecipe.getBlueprint());
+
+        List<String> blueprints = blueprintRecipe.getBlueprints();
+        buffer.writeVarInt(blueprints.size());
+        for (String bp : blueprints) {
+            buffer.writeUtf(bp);
+        }
     }
+
     public static <T> T cast(Object o) {
         return (T) o;
     }

@@ -33,8 +33,11 @@
   "gui.read": "§0Read",
   "gui.unlock": "§0To unlock",
   "gui.banned": "§0Because of the will of the world, recipe disappeared",
+  "gui.help.list": "§7Hold Shift to see learned blueprints",
+  "gui.help.detail": "§7Click arrows to flip to next recipe",
 
   "jei.butdaysblueprint.blueprint_required": "§cRead this blueprint to unlock the recipe",
+  "jei.butdaysblueprint.blueprints_required": "§cRead the following blueprints to unlock:",
   "jei.butdaysblueprint.recipe_locked": "§cRecipe locked",
   "jei.butdaysblueprint.recipe_unlocked": "§aRecipe unlocked",
 
@@ -55,7 +58,7 @@
   "butdaysblueprint.advancements.enthroned.description": "Divine mandate, supreme authority!",
   "butdaysblueprint.advancements.the_beginning_of_the_journey.title": "The beginning of the journey",
   "butdaysblueprint.advancements.the_beginning_of_the_journey.description": "It was like an Epiphany",
-  "butdaysblueprint.blueprint/nasa_workbench": "§5§lNASA Workbench Blueprint",
+  "butdaysblueprint.blueprint/nasa_workbench": "§5§lNASA Tech Blueprint",
   "butdaysblueprint.blueprint/nasa_workbench.description": "They all say radiation rockets are trendy, but I'm a traditionalist",
   "butdaysblueprint.blueprint/nasa_workbench.tooltip": "You figured out how it works",
   "butdaysblueprint.blueprint/nasa_workbench.message": "Maybe the meteorites that fell from the sky know something",
