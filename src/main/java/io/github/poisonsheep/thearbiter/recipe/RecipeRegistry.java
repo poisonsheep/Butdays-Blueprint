@@ -15,7 +15,7 @@ public class RecipeRegistry {
         return TYPES.register(name, () -> new RecipeType<>() {
             @Override
             public String toString() {
-                return new ResourceLocation(ButdaysBlueprint.MODID, name).toString();
+                return ResourceLocation.fromNamespaceAndPath(ButdaysBlueprint.MODID, name).toString();
             }
         });
     }

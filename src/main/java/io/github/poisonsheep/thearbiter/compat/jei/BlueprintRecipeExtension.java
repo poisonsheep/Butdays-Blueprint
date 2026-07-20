@@ -1,9 +1,9 @@
 package io.github.poisonsheep.thearbiter.compat.jei;
 
+import com.mojang.blaze3d.systems.RenderSystem;
 import io.github.poisonsheep.thearbiter.Item.Blueprint;
 import io.github.poisonsheep.thearbiter.Item.ItemRegistry;
 import io.github.poisonsheep.thearbiter.capability.PlayerBlueprintProvider;
-import io.github.poisonsheep.thearbiter.client.gui.BlueprintAnthologyScreen;
 import io.github.poisonsheep.thearbiter.recipe.BlueprintRecipe;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
@@ -25,7 +25,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class BlueprintRecipeExtension implements ICraftingCategoryExtension {
-    private static final ResourceLocation WIDGETS_TEXTURE = new ResourceLocation("minecraft", "textures/gui/widgets.png");
+    private static final ResourceLocation WIDGETS_TEXTURE = ResourceLocation.fromNamespaceAndPath("minecraft", "textures/gui/widgets.png");
     private final BlueprintRecipe recipe;
     private boolean wasLeftDown = false;
 
@@ -59,6 +59,9 @@ public class BlueprintRecipeExtension implements ICraftingCategoryExtension {
                     .allMatch(playerBlueprint.getBlueprints()::contains);
 
             if (!unlocked) {
+                // force our elements to render on top of JEI widgets
+                RenderSystem.enableDepthTest();
+
                 int arrowX = recipeWidth / 2 + 16 - 8;
                 int arrowY = recipeHeight / 2 - 8;
 
@@ -66,56 +69,62 @@ public class BlueprintRecipeExtension implements ICraftingCategoryExtension {
                 List<String> bpList = recipe.getBlueprints();
                 int bpCount = bpList.size();
                 int stackWidth = 16 + (bpCount - 1) * 8;
-                int itemX = arrowX + 6 - stackWidth / 2;  // center the stack (single card at arrowX-2)
+                int itemX = arrowX + 6 - stackWidth / 2;
                 int itemY = arrowY - 18;
-                // render back-to-front so the first blueprint is on top
                 for (int i = bpCount - 1; i >= 0; i--) {
                     ItemStack bpStack = new ItemStack(ItemRegistry.BLUEPRINT.get());
-                    Blueprint.setBluePrint(bpStack, new ResourceLocation(bpList.get(i)));
+                    Blueprint.setBluePrint(bpStack, ResourceLocation.parse(bpList.get(i)));
                     guiGraphics.renderItem(bpStack, itemX + i * 8, itemY);
                 }
 
-                // hovering over the stacked card area
                 boolean hoveringItem = mouseX >= itemX && mouseX < itemX + 16 + (bpCount - 1) * 8
                         && mouseY >= itemY && mouseY < itemY + 16;
 
-                // draw red X over the arrow
-                guiGraphics.pose().pushPose();
-                guiGraphics.pose().translate(arrowX, arrowY + 2, 0);
-                guiGraphics.pose().scale(1.5F, 1.5F, 1.0F);
-                guiGraphics.blit(BlueprintAnthologyScreen.BOOK_TEXTURES, 0, 0, 18, 233, 8, 8);
-                guiGraphics.pose().popPose();
-
                 // draw lock icon at top-right corner
                 guiGraphics.pose().pushPose();
-                guiGraphics.pose().translate(iconX, iconY, 0);
+                guiGraphics.pose().translate(iconX, iconY, 300);
                 guiGraphics.pose().scale(0.6F, 0.6F, 1.0F);
                 guiGraphics.blit(WIDGETS_TEXTURE, 0, 0, 0, 146, 20, 20, 256, 256);
                 guiGraphics.pose().popPose();
 
                 // tooltip + click for blueprint item
                 if (hoveringItem) {
+                    int tipX = 4;
+                    int tipY = itemY - 12;
+                    List<Component> lines = new java.util.ArrayList<>();
                     if (bpList.size() == 1) {
-                        String tipKey = bpList.get(0).replace(":", ".") + ".message";
-                        guiGraphics.renderTooltip(minecraft.font,
-                                Component.translatable(tipKey), (int) mouseX, (int) mouseY);
+                        String bp = bpList.get(0);
+                        boolean learned = playerBlueprint.getBlueprints().contains(bp);
+                        String mark = learned ? " §a✓" : " §c✕";
+                        lines.add(Component.translatable("jei.butdaysblueprint.blueprint_required"));
+                        lines.add(Component.literal("  ").append(Component.translatable(bp.replace(":", ".")))
+                                .append(Component.literal(mark)));
                     } else {
-                        // show all required blueprints
-                        List<Component> lines = new java.util.ArrayList<>();
                         lines.add(Component.translatable("jei.butdaysblueprint.blueprints_required"));
                         for (String bp : bpList) {
-                            lines.add(Component.literal("  ").append(Component.translatable(bp.replace(":", "."))));
+                            boolean learned = playerBlueprint.getBlueprints().contains(bp);
+                            String mark = learned ? " §a✓" : " §c✕";
+                            lines.add(Component.literal("  ").append(Component.translatable(bp.replace(":", ".")))
+                                    .append(Component.literal(mark)));
                         }
-                        guiGraphics.renderTooltip(minecraft.font, lines, java.util.Optional.empty(), (int) mouseX, (int) mouseY);
                     }
+                    guiGraphics.renderComponentTooltip(minecraft.font, lines, tipX, tipY);
                 }
 
-                // click blueprint item → navigate (deferred to main thread to avoid crash)
+                // click blueprint item → navigate to the clicked one
                 long window = minecraft.getWindow().getWindow();
                 boolean leftDown = GLFW.glfwGetMouseButton(window, GLFW.GLFW_MOUSE_BUTTON_1) == GLFW.GLFW_PRESS;
                 if (leftDown && !wasLeftDown && hoveringItem && JeiPlugin.runTime != null) {
+                    // find which card was clicked based on mouse X
+                    int clickedIdx = 0;
+                    for (int i = 0; i < bpCount; i++) {
+                        if (mouseX >= itemX + i * 8 && mouseX < itemX + i * 8 + 16) {
+                            clickedIdx = i;
+                            break;
+                        }
+                    }
                     ItemStack bpCopy = new ItemStack(ItemRegistry.BLUEPRINT.get());
-                    Blueprint.setBluePrint(bpCopy, new ResourceLocation(bpList.get(0)));
+                    Blueprint.setBluePrint(bpCopy, ResourceLocation.parse(bpList.get(clickedIdx)));
                     minecraft.execute(() -> {
                         if (JeiPlugin.runTime != null && JeiPlugin.runTime.getRecipesGui() != null) {
                             JeiPlugin.runTime.getRecipesGui().show(List.of(
@@ -133,10 +142,12 @@ public class BlueprintRecipeExtension implements ICraftingCategoryExtension {
                     guiGraphics.renderTooltip(minecraft.font,
                             Component.translatable("jei.butdaysblueprint.recipe_locked"), (int) mouseX, (int) mouseY);
                 }
+                RenderSystem.disableDepthTest();
             } else {
                 // draw unlock icon at top-right corner when recipe is learned
+                RenderSystem.enableDepthTest();
                 guiGraphics.pose().pushPose();
-                guiGraphics.pose().translate(iconX, iconY, 0);
+                guiGraphics.pose().translate(iconX, iconY, 300);
                 guiGraphics.pose().scale(0.6F, 0.6F, 1.0F);
                 guiGraphics.blit(WIDGETS_TEXTURE, 0, 0, 20, 146, 20, 20, 256, 256);
                 guiGraphics.pose().popPose();
@@ -147,6 +158,7 @@ public class BlueprintRecipeExtension implements ICraftingCategoryExtension {
                     guiGraphics.renderTooltip(minecraft.font,
                             Component.translatable("jei.butdaysblueprint.recipe_unlocked"), (int) mouseX, (int) mouseY);
                 }
+                RenderSystem.disableDepthTest();
             }
         });
     }

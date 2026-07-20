@@ -110,7 +110,7 @@ public class BlueprintInformationScreen extends BasicBookScreen {
 
     protected void putMap(GuiGraphics guiGraphics) {
         ItemStack stack = new ItemStack(ItemRegistry.BLUEPRINT.get());
-        Blueprint.setBluePrint(stack, new ResourceLocation(blueprint));
+        Blueprint.setBluePrint(stack, ResourceLocation.parse(blueprint));
         guiGraphics.renderItem(stack, this.leftPos + this.IMAGE_WIDTH / 4 - 8, this.bottomPos + Math.round(this.IMAGE_HEIGHT / 2) - 49);
     }
 

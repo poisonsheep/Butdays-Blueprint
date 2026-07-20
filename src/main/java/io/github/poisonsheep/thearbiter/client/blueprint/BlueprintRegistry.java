@@ -19,7 +19,7 @@ public class BlueprintRegistry {
         ResourceManager manager = Minecraft.getInstance().getResourceManager();
         for (String namespace : manager.getNamespaces()) {
             try {
-                ResourceLocation resourceName = new ResourceLocation(namespace, "blueprint/list.json");
+                ResourceLocation resourceName = ResourceLocation.fromNamespaceAndPath(namespace, "blueprint/list.json");
                 if (manager.getResource(resourceName).isPresent()) {
                     Optional<Resource> resource = manager.getResource(resourceName);
                     if (resource.isPresent()) {
@@ -34,7 +34,7 @@ public class BlueprintRegistry {
         }
 
         for (var info : BlueprintList.INSTANCE.blueprints) {
-            event.register(to(new ResourceLocation(info)));
+            event.register(to(ResourceLocation.parse(info)));
         }
     }
     @SubscribeEvent
@@ -49,6 +49,6 @@ public class BlueprintRegistry {
     }
 
     public static ResourceLocation to(ResourceLocation resourceLocation) {
-        return new ResourceLocation(resourceLocation.getNamespace(), resourceLocation.getPath());
+        return ResourceLocation.fromNamespaceAndPath(resourceLocation.getNamespace(), resourceLocation.getPath());
     }
 }

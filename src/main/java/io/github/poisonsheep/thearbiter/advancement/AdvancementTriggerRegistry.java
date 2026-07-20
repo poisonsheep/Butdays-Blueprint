@@ -5,9 +5,9 @@ import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.resources.ResourceLocation;
 
 public class AdvancementTriggerRegistry {
-    public static AdvancementTrigger ENTHRONED = new AdvancementTrigger(new ResourceLocation(ButdaysBlueprint.MODID, "enthroned"));
-    public static AdvancementTrigger FIRST_READ = new AdvancementTrigger(new ResourceLocation(ButdaysBlueprint.MODID, "first_read"));
-    public static AdvancementTrigger DREAM_AGAIN = new AdvancementTrigger(new ResourceLocation(ButdaysBlueprint.MODID, "dream_again"));
+    public static AdvancementTrigger ENTHRONED = new AdvancementTrigger(ResourceLocation.fromNamespaceAndPath(ButdaysBlueprint.MODID, "enthroned"));
+    public static AdvancementTrigger FIRST_READ = new AdvancementTrigger(ResourceLocation.fromNamespaceAndPath(ButdaysBlueprint.MODID, "first_read"));
+    public static AdvancementTrigger DREAM_AGAIN = new AdvancementTrigger(ResourceLocation.fromNamespaceAndPath(ButdaysBlueprint.MODID, "dream_again"));
 
     public static void register() {
         CriteriaTriggers.register(ENTHRONED);

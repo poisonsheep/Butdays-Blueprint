@@ -1,41 +1,23 @@
 {
-  "effect.butdaysblueprint.undying": "调停者的庇护",
-  "itemGroup.butdaysblueprint.blueprint_tab": " 蓝图",
+  "itemGroup.butdaysblueprint.blueprint_tab": "蓝图",
 
-  "item.shift_up": "按住SHIFT键获取更多信息！",
-  "item.butdaysblueprint.arbiter_sword": "§3§l调停者之剑",
-  "item.arbiter_sword.description": "§5我手中之剑乃映照苍天之明镜，森罗万象之悲戚皆为我所断",
-  "item.arbiter_sword.tooltip": "右键降下闪电审判周围敌人，并获得短暂的调停者的庇护效果",
   "item.butdaysblueprint.blueprint_anthology": "蓝图集",
 
   "message.butdaysblueprint.already_clear": "你选择遗忘",
-  "message.butdaysblueprint.already_read": "§5§l奇迹不会闪烁两次",
+  "message.butdaysblueprint.already_read": "你已经阅读过这张蓝图了",
   "message.butdaysblueprint.not_qualified": "你还不够资格",
 
-  "butdaysblueprint.blueprint/arbiter_sword": "§3§l调停者之剑蓝图",
-  "butdaysblueprint.blueprint/arbiter_sword.description": "§m你够资格吗？",
-  "butdaysblueprint.blueprint/arbiter_sword.tooltip": "§e你见证了真正的力量",
-  "butdaysblueprint.blueprint/arbiter_sword.message": "§u不断地寻觅，直到她的到来",
-  "butdaysblueprint.blueprint/dominator": "§t支配者蓝图",
-  "butdaysblueprint.blueprint/dominator.description": "§s拿起它的只会是猎犬",
-  "butdaysblueprint.blueprint/dominator.tooltip": "§3犯罪指数§f0",
-  "butdaysblueprint.blueprint/dominator.message": "敬请期待",
   "butdaysblueprint.blueprint/unknown": "未知蓝图",
   "butdaysblueprint.blueprint/unknown.description": "§k未知蓝图吃掉了你的脑子",
   "butdaysblueprint.blueprint/unknown.tooltip": "愿以此身，受你之痛",
   "butdaysblueprint.blueprint/unknown.message": "只有创世之大能知道他的秘密",
 
-  "butdaysblueprint.sound.subtitle.arbiter_sword_charged": "调停者之剑充能完毕",
-  "butdaysblueprint.sound.subtitle.arbiter_sword_use": "使用调停者之剑",
-  "butdaysblueprint.sound.subtitle.zooey": "佐伊",
-
   "gui.read": "§0阅读",
   "gui.unlock": "§0以解锁",
-  "gui.banned": "§0因为世界意志的原因，配方消失了",
   "gui.help.list": "§7按住 Shift 可查看已阅读的蓝图",
   "gui.help.detail": "§7点击回形针可翻到下一个配方",
 
-  "jei.butdaysblueprint.blueprint_required": "§c需先阅读该蓝图才可解锁合成",
+  "jei.butdaysblueprint.blueprint_required": "§c需先阅读该蓝图才可解锁合成:",
   "jei.butdaysblueprint.blueprints_required": "§c需先阅读以下蓝图才可解锁合成:",
   "jei.butdaysblueprint.recipe_locked": "§c配方未解锁",
   "jei.butdaysblueprint.recipe_unlocked": "§a配方已解锁",
@@ -69,7 +51,7 @@
   "butdaysblueprint.blueprint/drawing_ability": "§d绘画才能",
   "butdaysblueprint.blueprint/drawing_ability.description": "痛苦会过去，美会留下",
   "butdaysblueprint.blueprint/drawing_ability.tooltip": "§b就像戴上眼镜，你看到了更多",
-  "butdaysblueprint.blueprint/drawing_ability.message": "沉船的地图箱里除了藏宝图，还夹着一张美术作业",
+  "butdaysblueprint.blueprint/drawing_ability.message": "永别了！罗斯。说完杰克和他的绘画秘籍慢慢淹没在海水中",
 
   "butdaysblueprint.blueprint/music_producer": "§e音乐制作人必修课",
   "butdaysblueprint.blueprint/music_producer.description": "引导人走进灵魂的秘境",
@@ -79,7 +61,7 @@
   "butdaysblueprint.blueprint/contaminated_parchment_paper": "§4被污染的手稿",
   "butdaysblueprint.blueprint/contaminated_parchment_paper.description": "请告诫我真理",
   "butdaysblueprint.blueprint/contaminated_parchment_paper.tooltip": "§5邪恶在你的脑海里发酵",
-  "butdaysblueprint.blueprint/contaminated_parchment_paper.message": "地牢和林地府邸的暗角，邪恶在羊皮纸上蔓延。唤魔者身上也偶尔会掉一张",
+  "butdaysblueprint.blueprint/contaminated_parchment_paper.message": "地牢和林地府邸总会有这种阴森的东西，剧本通常是这么写的",
 
   "butdaysblueprint.blueprint/engineer_manual": "工程师手册",
   "butdaysblueprint.blueprint/engineer_manual.description": "工程师手稿的进阶版",
@@ -89,12 +71,12 @@
   "butdaysblueprint.blueprint/engineer_manuscript": "工程师手稿",
   "butdaysblueprint.blueprint/engineer_manuscript.description": "将空手砍树的能力运用到制作上就好",
   "butdaysblueprint.blueprint/engineer_manuscript.tooltip": "你的动手能力变得更强了",
-  "butdaysblueprint.blueprint/engineer_manuscript.message": "村庄工具匠的箱子里总能翻到——他们总是把图纸随手乱放",
+  "butdaysblueprint.blueprint/engineer_manuscript.message": "工具匠总是把图纸随手乱放",
 
   "butdaysblueprint.blueprint/bioprogram": "§2生物计划",
   "butdaysblueprint.blueprint/bioprogram.description": "它们跃然纸上",
   "butdaysblueprint.blueprint/bioprogram.tooltip": "克隆霸王龙变得不再困难",
-  "butdaysblueprint.blueprint/bioprogram.message": "丛林神庙的藤蔓背后，生命的密码刻在纸上",
+  "butdaysblueprint.blueprint/bioprogram.message": "冷知识：恐龙是玛雅人培育的。不信你去丛林神庙里看看",
 
   "butdaysblueprint.blueprint/honey_yellowprint": "§6甜蜜蓝图",
   "butdaysblueprint.blueprint/honey_yellowprint.description": "我们这张蓝图出自米奇林五星甜点师之手",
@@ -102,14 +84,14 @@
   "butdaysblueprint.blueprint/honey_yellowprint.message": "往蓝图上滴蜂蜜，就是这么简单",
 
   "butdaysblueprint.blueprint/key_to_city": "§d城镇之钥",
-  "butdaysblueprint.blueprint/key_to_city.description": "你好像有点太城市化了",
+  "butdaysblueprint.blueprint/key_to_city.description": "猪镇公主的收藏",
   "butdaysblueprint.blueprint/key_to_city.tooltip": "你进入了现代化的征程",
-  "butdaysblueprint.blueprint/key_to_city.message": "被村民敬仰的英雄才有资格掌管城镇——或者直接翻教堂的箱子",
+  "butdaysblueprint.blueprint/key_to_city.message": "捍卫猪镇！。。。或者直接翻教堂的箱子",
 
   "butdaysblueprint.blueprint/residual_chapter_of_atlantis": "§3亚特兰蒂斯的遗失之章",
   "butdaysblueprint.blueprint/residual_chapter_of_atlantis.description": "一个......海底的理想国？",
   "butdaysblueprint.blueprint/residual_chapter_of_atlantis.tooltip": "繁荣存在于过去，如今只能得到沉默的回应",
-  "butdaysblueprint.blueprint/residual_chapter_of_atlantis.message": "远古守卫者守护的秘密，偶尔也会被钓鱼竿勾上来——深海之下，奇迹等待被发现",
+  "butdaysblueprint.blueprint/residual_chapter_of_atlantis.message": "远古守卫者正是通过钓鱼搜集这种东西的",
 
   "butdaysblueprint.blueprint/imperial_edict": "§c伪帝诏令",
   "butdaysblueprint.blueprint/imperial_edict.description": "来自遥远过去的国王，如今只剩下他的阴影",
@@ -129,11 +111,11 @@
   "butdaysblueprint.blueprint/wormholes_on_paper": "§3纸上虫洞",
   "butdaysblueprint.blueprint/wormholes_on_paper.description": "不能用来回到过去",
   "butdaysblueprint.blueprint/wormholes_on_paper.tooltip": "你的思绪飘向远方",
-  "butdaysblueprint.blueprint/wormholes_on_paper.message": "末影龙死后留下的不只是经验——还有一份空间折叠指南",
+  "butdaysblueprint.blueprint/wormholes_on_paper.message": "你有没有想过为啥末影龙死后能给你开个传送门回家",
 
   "butdaysblueprint.blueprint/the_sands_of_time": "§6时之砂",
   "butdaysblueprint.blueprint/the_sands_of_time.description": "沙...沙沙",
-  "butdaysblueprint.blueprint/the_sands_of_time.tooltip": "恍惚中从手指间滑落",
+  "butdaysblueprint.blueprint/the_sands_of_time.tooltip": "化作流沙于指缝间滑落",
   "butdaysblueprint.blueprint/the_sands_of_time.message": "企图扭转时间的人此时与时间一同入睡。。。在黄沙构成的棺椁中",
 
   "butdaysblueprint.blueprint/burning_wish": "§6燃烧的愿景",
@@ -143,6 +125,6 @@
 
   "butdaysblueprint.blueprint/contaminated_code": "§4扭曲法典",
   "butdaysblueprint.blueprint/contaminated_code.description": "哪有什么圣光，只有。。。力量！",
-  "butdaysblueprint.blueprint/contaminated_code.tooltip": "§o哼哼@哈%哈*哈哈。。。#",
-  "butdaysblueprint.blueprint/contaminated_code.message": "将污染的手稿碎片拼凑——三张手稿加皮革即可合成"
+  "butdaysblueprint.blueprint/contaminated_code.tooltip": "§o禁忌的知识在脑海中尖叫……你的理智摇摇欲坠",
+  "butdaysblueprint.blueprint/contaminated_code.message": "将污染的碎片拼凑"
 }

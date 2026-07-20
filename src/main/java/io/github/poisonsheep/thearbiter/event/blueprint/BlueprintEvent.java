@@ -23,7 +23,7 @@ public class BlueprintEvent {
         if (event.getObject() instanceof Player) {
             if (!((Player) event.getObject()).getCapability(PlayerBlueprintProvider.PLAYER_BLUEPRINT_CAPABILITY).isPresent()) {
                 // The player does not already have this capability so we need to add the capability provider here
-                event.addCapability(new ResourceLocation(ButdaysBlueprint.MODID, "player_blueprints"), new PlayerBlueprintProvider());
+                event.addCapability(ResourceLocation.fromNamespaceAndPath(ButdaysBlueprint.MODID, "player_blueprints"), new PlayerBlueprintProvider());
             }
         }
     }

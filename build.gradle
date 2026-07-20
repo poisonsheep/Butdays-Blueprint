@@ -129,7 +129,7 @@ repositories {
 dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
     //jei
-    implementation fg.deobf("mezz.jei:jei-1.20.1-forge:15.1.0.19")
+    implementation fg.deobf("mezz.jei:jei-1.20.1-forge:15.20.0.112")
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.

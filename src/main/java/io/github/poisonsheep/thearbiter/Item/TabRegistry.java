@@ -27,7 +27,7 @@ public class TabRegistry {
             event.accept(new ItemStack(ItemRegistry.BLUEPRINT_ANTHOLOGY.get()));
             for (String blueprint : BlueprintList.INSTANCE.blueprints) {
                 ItemStack itemStack = new ItemStack(ItemRegistry.BLUEPRINT.get());
-                Blueprint.setBluePrint(itemStack, new ResourceLocation(blueprint));
+                Blueprint.setBluePrint(itemStack, ResourceLocation.parse(blueprint));
                 event.accept(itemStack);
             }
         }

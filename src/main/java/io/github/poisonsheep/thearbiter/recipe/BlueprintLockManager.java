@@ -25,7 +25,7 @@ import java.util.*;
 public class BlueprintLockManager {
     private static final Logger LOGGER = LogUtils.getLogger();
     private static final Gson GSON = new GsonBuilder().create();
-    private static final ResourceLocation CONFIG_ID = new ResourceLocation("butdaysblueprint", "blueprint_locks.json");
+    private static final ResourceLocation CONFIG_ID = ResourceLocation.fromNamespaceAndPath("butdaysblueprint", "blueprint_locks.json");
 
     @SubscribeEvent
     public static void onServerStarted(ServerStartedEvent event) {
@@ -39,8 +39,8 @@ public class BlueprintLockManager {
         boolean hasMulti = config.multi_locks != null && !config.multi_locks.isEmpty();
         if (!hasSingle && !hasMulti) return;
 
-        Map<ResourceLocation, Recipe<?>> byName = getField(recipeManager, "byName");
-        Map<RecipeType<?>, Map<ResourceLocation, Recipe<?>>> recipes = getField(recipeManager, "recipes");
+        Map<ResourceLocation, Recipe<?>> byName = getByNameMap(recipeManager);
+        Map<RecipeType<?>, Map<ResourceLocation, Recipe<?>>> recipes = getRecipesMap(recipeManager);
         if (byName == null || recipes == null) {
             LOGGER.error("Failed to access RecipeManager maps, blueprint locks not applied");
             return;
@@ -107,48 +107,71 @@ public class BlueprintLockManager {
             LOGGER.debug("Locked {} -> {}", id, blueprints);
         }
 
-        setField(recipeManager, "byName", newByName);
-        setField(recipeManager, "recipes", newRecipes);
+        setFieldByType(recipeManager, newByName);
+        setFieldByType(recipeManager, newRecipes);
         LOGGER.info("Blueprint locks applied: {} recipe(s) wrapped", wrapped);
     }
 
     @SuppressWarnings("unchecked")
-    private static <T> T getField(RecipeManager manager, String name) {
-        try {
-            Field field = RecipeManager.class.getDeclaredField(name);
-            field.setAccessible(true);
-            return (T) field.get(manager);
-        } catch (NoSuchFieldException e) {
-            for (Field f : RecipeManager.class.getFields()) {
-                if (f.getName().equals(name)) {
-                    try { return (T) f.get(manager); }
-                    catch (IllegalAccessException ignored) {}
-                }
+    private static Map<ResourceLocation, Recipe<?>> getByNameMap(RecipeManager manager) {
+        for (Field field : RecipeManager.class.getDeclaredFields()) {
+            if (Map.class.isAssignableFrom(field.getType())) {
+                field.setAccessible(true);
+                try {
+                    Object val = field.get(manager);
+                    if (val instanceof Map<?,?> map && !map.isEmpty()) {
+                        Object firstKey = map.keySet().iterator().next();
+                        if (firstKey instanceof ResourceLocation) {
+                            return (Map<ResourceLocation, Recipe<?>>) val;
+                        }
+                    }
+                } catch (IllegalAccessException ignored) {}
             }
-            LOGGER.error("RecipeManager.{} field not found", name);
-            return null;
-        } catch (IllegalAccessException e) {
-            LOGGER.error("Cannot access RecipeManager.{}", name, e);
-            return null;
         }
+        LOGGER.error("Could not find byName map in RecipeManager");
+        return null;
     }
 
-    private static void setField(RecipeManager manager, String name, Object value) {
-        try {
-            Field field = RecipeManager.class.getDeclaredField(name);
-            field.setAccessible(true);
-            field.set(manager, value);
-        } catch (NoSuchFieldException e) {
-            for (Field f : RecipeManager.class.getFields()) {
-                if (f.getName().equals(name)) {
-                    try { f.set(manager, value); return; }
-                    catch (IllegalAccessException ignored) {}
-                }
+    @SuppressWarnings("unchecked")
+    private static Map<RecipeType<?>, Map<ResourceLocation, Recipe<?>>> getRecipesMap(RecipeManager manager) {
+        for (Field field : RecipeManager.class.getDeclaredFields()) {
+            if (Map.class.isAssignableFrom(field.getType())) {
+                field.setAccessible(true);
+                try {
+                    Object val = field.get(manager);
+                    if (val instanceof Map<?,?> outer && !outer.isEmpty()) {
+                        Object firstKey = outer.keySet().iterator().next();
+                        Object firstVal = outer.get(firstKey);
+                        if (firstKey instanceof RecipeType && firstVal instanceof Map) {
+                            return (Map<RecipeType<?>, Map<ResourceLocation, Recipe<?>>>) val;
+                        }
+                    }
+                } catch (IllegalAccessException ignored) {}
             }
-            LOGGER.error("RecipeManager.{} field not found for set", name);
-        } catch (IllegalAccessException e) {
-            LOGGER.error("Cannot set RecipeManager.{}", name, e);
         }
+        LOGGER.error("Could not find recipes map in RecipeManager");
+        return null;
+    }
+
+    @SuppressWarnings("unchecked")
+    private static void setFieldByType(RecipeManager manager, Map<?, ?> newMap) {
+        Object sampleKey = newMap.keySet().iterator().next();
+        for (Field field : RecipeManager.class.getDeclaredFields()) {
+            if (Map.class.isAssignableFrom(field.getType())) {
+                field.setAccessible(true);
+                try {
+                    Map<?, ?> current = (Map<?, ?>) field.get(manager);
+                    if (current != null && !current.isEmpty()) {
+                        Object currentKey = current.keySet().iterator().next();
+                        if (currentKey.getClass() == sampleKey.getClass()) {
+                            field.set(manager, newMap);
+                            return;
+                        }
+                    }
+                } catch (IllegalAccessException ignored) {}
+            }
+        }
+        LOGGER.error("Could not set field in RecipeManager by type matching");
     }
 
     private static LockConfig loadLockConfig(MinecraftServer server) {

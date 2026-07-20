@@ -22,7 +22,7 @@ import java.util.stream.Collectors;
 
 public class BlueprintViewScreen extends BasicBookScreen {
 
-    public static final ResourceLocation BLUEPRINT_ANTHOLOGY_VIEW_TEXTURE = new ResourceLocation(ButdaysBlueprint.MODID,"textures/gui/blueprint_anthology_gui2.png");
+    public static final ResourceLocation BLUEPRINT_ANTHOLOGY_VIEW_TEXTURE = ResourceLocation.fromNamespaceAndPath(ButdaysBlueprint.MODID,"textures/gui/blueprint_anthology_gui2.png");
     int page;
     private final Screen parent;
     int maxPagePairCount;
@@ -61,7 +61,7 @@ public class BlueprintViewScreen extends BasicBookScreen {
     }
 
     private void createMenu() {
-        createMenu(6, 10);
+        createMenu(6, 9);
     }
 
     private static void forEach(BlueprintWidget[][][][] widgets, Consumer<BlueprintWidget> widget) {
@@ -91,7 +91,7 @@ public class BlueprintViewScreen extends BasicBookScreen {
         int registryIdx = 0;
         int width = 17;
         int buttonSize = width - 2;
-        int offsetFromEdge = 15;
+        int offsetFromEdge = 19;
         for (BlueprintWidget[][][] pagePair : items) {
             for (int pageSide = 0; pageSide < pagePair.length; pageSide++) {
                 BlueprintWidget[][] page = pagePair[pageSide];
@@ -105,7 +105,7 @@ public class BlueprintViewScreen extends BasicBookScreen {
                         }
                         String blueprint = blueprints.get(registryIdx);
                         ItemStack stack = new ItemStack(ItemRegistry.BLUEPRINT.get());
-                        Blueprint.setBluePrint(stack, new ResourceLocation(blueprint));
+                        Blueprint.setBluePrint(stack, ResourceLocation.parse(blueprint));
                         BlueprintWidget itemWidget = new BlueprintWidget(stack, this.minecraft.getItemRenderer(), blueprint, xOffset + startX, yOffset, buttonSize, buttonSize, button -> {
                             this.minecraft.setScreen(new BlueprintInformationScreen(blueprint, this));
                         });

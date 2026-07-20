@@ -11,7 +11,7 @@ import java.util.Optional;
 
 public class ModNetwork {
     public static final SimpleChannel INSTANCE = NetworkRegistry.newSimpleChannel(
-            new ResourceLocation(ButdaysBlueprint.MODID, "main"),
+            ResourceLocation.fromNamespaceAndPath(ButdaysBlueprint.MODID, "main"),
             () -> ButdaysBlueprint.VERSION,
             ButdaysBlueprint.VERSION::equals,
             ButdaysBlueprint.VERSION::equals

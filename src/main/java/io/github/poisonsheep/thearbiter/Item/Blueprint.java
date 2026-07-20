@@ -23,8 +23,8 @@ import java.util.Objects;
 
 public class Blueprint extends Item {
     
-    public static final ResourceLocation UNKNOWN_BLUEPRINT = new ResourceLocation(ButdaysBlueprint.MODID, "blueprint/unknown");
-    public static final ResourceLocation ARBITER_SWORD_BLUEPRINT = new ResourceLocation(ButdaysBlueprint.MODID, "blueprint/arbiter_sword");
+    public static final ResourceLocation UNKNOWN_BLUEPRINT = ResourceLocation.fromNamespaceAndPath(ButdaysBlueprint.MODID, "blueprint/unknown");
+    public static final ResourceLocation ARBITER_SWORD_BLUEPRINT = ResourceLocation.fromNamespaceAndPath(ButdaysBlueprint.MODID, "blueprint/arbiter_sword");
     public Blueprint() {
         super(new Properties().stacksTo(1));
     }
@@ -35,7 +35,7 @@ public class Blueprint extends Item {
     public static ResourceLocation getBlueprint(ItemStack itemStack) {
         if (itemStack.getTag() != null && itemStack.getTag().contains("blueprint")) {
             String tag = itemStack.getTag().getString("blueprint");
-            return new ResourceLocation(tag);
+            return ResourceLocation.parse(tag);
         }
         return UNKNOWN_BLUEPRINT;
     }

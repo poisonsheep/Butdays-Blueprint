@@ -8,8 +8,8 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 
 public class BlueprintAnthologyScreen extends BasicBookScreen {
-    public static final ResourceLocation BLUEPRINT_ANTHOLOGY_TEXTURE = new ResourceLocation(ButdaysBlueprint.MODID,"textures/gui/blueprint_anthology_gui.png");
-    public static final ResourceLocation BOOK_TEXTURES = new ResourceLocation(ButdaysBlueprint.MODID, "textures/gui/ui.png");
+    public static final ResourceLocation BLUEPRINT_ANTHOLOGY_TEXTURE = ResourceLocation.fromNamespaceAndPath(ButdaysBlueprint.MODID,"textures/gui/blueprint_anthology_gui.png");
+    public static final ResourceLocation BOOK_TEXTURES = ResourceLocation.fromNamespaceAndPath(ButdaysBlueprint.MODID, "textures/gui/ui.png");
     Component title  = Component.translatable("butdaysblueprint.title");
     Component author  = Component.translatable("butdaysblueprint.author");
     Component textComponent = Component.translatable("butdaysblueprint.intro");

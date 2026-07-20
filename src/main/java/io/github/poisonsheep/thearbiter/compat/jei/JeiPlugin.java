@@ -19,7 +19,7 @@ import net.minecraft.world.item.ItemStack;
 public class JeiPlugin implements IModPlugin {
 
     public static IJeiRuntime runTime;
-    public static final ResourceLocation UID = new ResourceLocation(ButdaysBlueprint.MODID, "jei_plugin");
+    public static final ResourceLocation UID = ResourceLocation.fromNamespaceAndPath(ButdaysBlueprint.MODID, "jei_plugin");
     @Override
     public ResourceLocation getPluginUid() {
         return UID;
@@ -39,7 +39,7 @@ public class JeiPlugin implements IModPlugin {
     public void registerRecipes(IRecipeRegistration registration) {
         for (String blueprint : BlueprintList.INSTANCE.blueprints) {
             ItemStack stack = new ItemStack(ItemRegistry.BLUEPRINT.get());
-            ResourceLocation name = new ResourceLocation(blueprint);
+            ResourceLocation name = ResourceLocation.parse(blueprint);
             Blueprint.setBluePrint(stack, name);
             registration.addIngredientInfo(stack, VanillaTypes.ITEM_STACK, Component.translatable(blueprint.replace(":", ".") + ".message"));
         }

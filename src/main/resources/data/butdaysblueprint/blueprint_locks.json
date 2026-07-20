@@ -10,7 +10,8 @@
       "minecraft:iron_chestplate",
       "minecraft:iron_leggings",
       "minecraft:iron_boots",
-      "minecraft:shield"
+      "minecraft:shield",
+      "minecraft:spyglass"
     ],
     "butdaysblueprint:blueprint/engineer_manual": [
       "minecraft:diamond_pickaxe",

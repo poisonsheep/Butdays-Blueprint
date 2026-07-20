@@ -42,7 +42,7 @@ public class BlueprintModifier extends LootModifier {
 
     @Override
     protected @NotNull ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot, LootContext context) {
-        ResourceLocation id = new ResourceLocation(blueprint);
+        ResourceLocation id = ResourceLocation.parse(blueprint);
         ItemStack stack = new ItemStack(ItemRegistry.BLUEPRINT.get());
         Blueprint.setBluePrint(stack ,id);
         generatedLoot.add(stack);

@@ -1,42 +1,23 @@
 {
-  "effect.butdaysblueprint.undying": "The Arbiter's Protection",
   "itemGroup.butdaysblueprint.blueprint_tab": "Blueprint",
 
-  "item.shift_up": "Press SHIFT for more info!",
-  "item.butdaysblueprint.arbiter_sword": "§3§lThe Arbiter's Sword",
-  "item.arbiter_sword.description": "§5The sword in my hand is the bright mirror that reflects the sky, the sorrow of all things is cut by me",
-  "item.arbiter_sword.tooltip": "Right use the descending lightning to judge enemies around you, gain the refuge of a mediator",
   "item.butdaysblueprint.blueprint_anthology": "Blueprint Collection",
 
   "message.butdaysblueprint.already_clear": "You chose to forget",
-  "message.butdaysblueprint.already_read": "§5§lMiracles won't flash twice",
+  "message.butdaysblueprint.already_read": "You have already read this blueprint",
   "message.butdaysblueprint.not_qualified": "You're not qualified",
 
-
-  "butdaysblueprint.blueprint/arbiter_sword": "§3§lThe Arbiter's Sword Blueprint",
-  "butdaysblueprint.blueprint/arbiter_sword.description": "§mAre you qualified?",
-  "butdaysblueprint.blueprint/arbiter_sword.tooltip": "§eYou witnessed the true power",
-  "butdaysblueprint.blueprint/arbiter_sword.message": "§uKeep searching until she arrives",
-  "butdaysblueprint.blueprint/dominator": "§tDominator Blueprint",
-  "butdaysblueprint.blueprint/dominator.description": "§sOnly hounds will pick it up",
-  "butdaysblueprint.blueprint/dominator.tooltip": "§3Crime Index§f0",
-  "butdaysblueprint.blueprint/dominator.message": "Not yet released",
   "butdaysblueprint.blueprint/unknown": "Unknown Blueprint",
   "butdaysblueprint.blueprint/unknown.description": "§kUnknown blueprint ate your brain",
   "butdaysblueprint.blueprint/unknown.tooltip": "May this body, bear your pain",
   "butdaysblueprint.blueprint/unknown.message": "Only the Creator knows his secret",
 
-  "butdaysblueprint.sound.subtitle.arbiter_sword_charged": "The Arbiter's Sword charged",
-  "butdaysblueprint.sound.subtitle.arbiter_sword_use": "Use The Arbiter's Sword",
-  "butdaysblueprint.sound.subtitle.zooey": "Zooey",
-
   "gui.read": "§0Read",
-  "gui.unlock": "§0To unlock",
-  "gui.banned": "§0Because of the will of the world, recipe disappeared",
+  "gui.unlock": "§0to unlock",
   "gui.help.list": "§7Hold Shift to see learned blueprints",
   "gui.help.detail": "§7Click arrows to flip to next recipe",
 
-  "jei.butdaysblueprint.blueprint_required": "§cRead this blueprint to unlock the recipe",
+  "jei.butdaysblueprint.blueprint_required": "§cRead this blueprint to unlock:",
   "jei.butdaysblueprint.blueprints_required": "§cRead the following blueprints to unlock:",
   "jei.butdaysblueprint.recipe_locked": "§cRecipe locked",
   "jei.butdaysblueprint.recipe_unlocked": "§aRecipe unlocked",
@@ -56,6 +37,10 @@
   "butdaysblueprint.advancements.transform.description": "§6Witness your power",
   "butdaysblueprint.advancements.enthroned.title": "§6Take the crown",
   "butdaysblueprint.advancements.enthroned.description": "Divine mandate, supreme authority!",
+  "butdaysblueprint.advancements.anthology.title": "Weary Traveler",
+  "butdaysblueprint.advancements.anthology.description": "In your dreams, you heard the whispers of knowledge",
+  "butdaysblueprint.advancements.dream_again.title": "Dream Again",
+  "butdaysblueprint.advancements.dream_again.description": "Sleeping with a book, the prophet once again entrusted wisdom to you",
   "butdaysblueprint.advancements.the_beginning_of_the_journey.title": "The beginning of the journey",
   "butdaysblueprint.advancements.the_beginning_of_the_journey.description": "It was like an Epiphany",
   "butdaysblueprint.blueprint/nasa_workbench": "§5§lNASA Tech Blueprint",
@@ -66,7 +51,7 @@
   "butdaysblueprint.blueprint/drawing_ability": "§dDrawing Ability",
   "butdaysblueprint.blueprint/drawing_ability.description": "Pain will pass, beauty will remain",
   "butdaysblueprint.blueprint/drawing_ability.tooltip": "§bIt's like wearing glasses, you see more",
-  "butdaysblueprint.blueprint/drawing_ability.message": "Please the cartographer, he will teach you",
+  "butdaysblueprint.blueprint/drawing_ability.message": "Farewell, Rose! Jack and his painting secrets sank beneath the waves...",
 
   "butdaysblueprint.blueprint/music_producer": "§eMusic Producer Essentials",
   "butdaysblueprint.blueprint/music_producer.description": "Actually we don't have to resort to violence",
@@ -76,7 +61,7 @@
   "butdaysblueprint.blueprint/contaminated_parchment_paper": "§4Contaminated Manuscript",
   "butdaysblueprint.blueprint/contaminated_parchment_paper.description": "Please tell me the truth",
   "butdaysblueprint.blueprint/contaminated_parchment_paper.tooltip": "§5Evil is fermenting in your mind",
-  "butdaysblueprint.blueprint/contaminated_parchment_paper.message": "To be determined",
+  "butdaysblueprint.blueprint/contaminated_parchment_paper.message": "Dungeons and woodland mansions always have creepy stuff like this. It's in the script.",
 
   "butdaysblueprint.blueprint/engineer_manual": "Engineer Manual",
   "butdaysblueprint.blueprint/engineer_manual.description": "An advanced version of the engineer manuscript",
@@ -86,11 +71,11 @@
   "butdaysblueprint.blueprint/engineer_manuscript": "Engineer Manuscript",
   "butdaysblueprint.blueprint/engineer_manuscript.description": "Just apply the ability to chop trees with bare hands to crafting",
   "butdaysblueprint.blueprint/engineer_manuscript.tooltip": "Your hands-on ability becomes stronger",
-  "butdaysblueprint.blueprint/engineer_manuscript.message": "Find the ancient ruins, pass the test and find the treasure",
+  "butdaysblueprint.blueprint/engineer_manuscript.message": "Toolsmiths always leave their blueprints lying around",
   "butdaysblueprint.blueprint/bioprogram": "§2Bio Program",
   "butdaysblueprint.blueprint/bioprogram.description": "They are vivid on paper",
   "butdaysblueprint.blueprint/bioprogram.tooltip": "Cloning a tyrannosaurus is no longer difficult",
-  "butdaysblueprint.blueprint/bioprogram.message": "To be determined",
+  "butdaysblueprint.blueprint/bioprogram.message": "Fun fact: dinosaurs were bred by the Maya. Don't believe me? Check the jungle temple.",
 
   "butdaysblueprint.blueprint/honey_yellowprint": "§6Sweet Blueprint",
   "butdaysblueprint.blueprint/honey_yellowprint.description": "This blueprint is from a Michelin five-star dessert chef",
@@ -98,17 +83,47 @@
   "butdaysblueprint.blueprint/honey_yellowprint.message": "Just drip honey on the blueprint, it's that simple",
 
   "butdaysblueprint.blueprint/key_to_city": "Key to the City",
-  "butdaysblueprint.blueprint/key_to_city.description": "You seem a bit too urbanized",
+  "butdaysblueprint.blueprint/key_to_city.description": "The Pig Princess's collection",
   "butdaysblueprint.blueprint/key_to_city.tooltip": "You have entered the modern journey",
-  "butdaysblueprint.blueprint/key_to_city.message": "To be determined",
+  "butdaysblueprint.blueprint/key_to_city.message": "Defend the pig town! ...or just loot the church chest",
 
   "butdaysblueprint.blueprint/residual_chapter_of_atlantis": "§3The Lost Chapter of Atlantis",
   "butdaysblueprint.blueprint/residual_chapter_of_atlantis.description": "A... utopia under the sea?",
   "butdaysblueprint.blueprint/residual_chapter_of_atlantis.tooltip": "Prosperity existed in the past, but now only silence answers",
-  "butdaysblueprint.blueprint/residual_chapter_of_atlantis.message": "How did I have such a strange dream, a fish handed me this ancient treasure",
+  "butdaysblueprint.blueprint/residual_chapter_of_atlantis.message": "Elder Guardians collect these by fishing. True story.",
 
   "butdaysblueprint.blueprint/imperial_edict": "§cFake imperial edict",
   "butdaysblueprint.blueprint/imperial_edict.description": "The king of the distant past is now only a shadow of him",
   "butdaysblueprint.blueprint/imperial_edict.tooltip": "You tasted power... And violent",
-  "butdaysblueprint.blueprint/imperial_edict.message": "Heard the world was ending and I still had that power"
+  "butdaysblueprint.blueprint/imperial_edict.message": "No acquisition method or recipe defined yet",
+
+  "butdaysblueprint.blueprint/kitty_letter": "§dKitty Letter",
+  "butdaysblueprint.blueprint/kitty_letter.description": "@meow~",
+  "butdaysblueprint.blueprint/kitty_letter.tooltip": "Small animals are more willing to get close to you",
+  "butdaysblueprint.blueprint/kitty_letter.message": "No acquisition method or recipe defined yet",
+
+  "butdaysblueprint.blueprint/fading_in_the_shadow": "§7Fading in the Shadow",
+  "butdaysblueprint.blueprint/fading_in_the_shadow.description": "Please give me your heart, join me",
+  "butdaysblueprint.blueprint/fading_in_the_shadow.tooltip": "You carried my soul out of its prison",
+  "butdaysblueprint.blueprint/fading_in_the_shadow.message": "Defeat the Wither and pick this dark gift from its ashes",
+
+  "butdaysblueprint.blueprint/wormholes_on_paper": "§3Wormholes on Paper",
+  "butdaysblueprint.blueprint/wormholes_on_paper.description": "Cannot be used to go back in time",
+  "butdaysblueprint.blueprint/wormholes_on_paper.tooltip": "Your thoughts drift far away",
+  "butdaysblueprint.blueprint/wormholes_on_paper.message": "Ever wonder why the Ender Dragon can open a portal to send you home?",
+
+  "butdaysblueprint.blueprint/the_sands_of_time": "§6The Sands of Time",
+  "butdaysblueprint.blueprint/the_sands_of_time.description": "Sand... rustling",
+  "butdaysblueprint.blueprint/the_sands_of_time.tooltip": "Turns to flowing sand, slipping through your fingers",
+  "butdaysblueprint.blueprint/the_sands_of_time.message": "Buried beneath the desert pyramid's golden sand, time stands still",
+
+  "butdaysblueprint.blueprint/burning_wish": "§6Burning Wish",
+  "butdaysblueprint.blueprint/burning_wish.description": "An unquenchable flame frozen in a moment",
+  "butdaysblueprint.blueprint/burning_wish.tooltip": "Turns to ash the instant your fingertips touch it",
+  "butdaysblueprint.blueprint/burning_wish.message": "Blazes and Bastion Remnants hide a flame that never dies",
+
+  "butdaysblueprint.blueprint/contaminated_code": "§4Twisted Codex",
+  "butdaysblueprint.blueprint/contaminated_code.description": "There is no holy light, only... power!",
+  "butdaysblueprint.blueprint/contaminated_code.tooltip": "§oForbidden knowledge screams in your mind... your sanity crumbles",
+  "butdaysblueprint.blueprint/contaminated_code.message": "Piece together the contaminated fragments"
 }
