@@ -1,10 +1,14 @@
 # Butday's Blueprint
 
-*Unlock recipes with blueprints — inspired by Don't Starve.*
+*A data-driven blueprint recipe engine for modpack authors — inspired by Don't Starve.*
 
 ## Overview
 
-Blueprints are scattered across the world in chests, dropped by mobs, or reeled in while fishing. Each blueprint you **read** (right-click) permanently unlocks one or more crafting recipes. If you haven't learned the required blueprint, the recipe simply won't work — no matter how many ingredients you have.
+Butday's Blueprint is first and foremost a **modpack author's tool**. It provides a complete framework for gating crafting recipes behind blueprint knowledge, with zero Java coding required. Everything — blueprints, their textures, descriptions, unlock conditions, and loot sources — is driven by JSON data.
+
+Blueprints are scattered across the world in chests, dropped by mobs, or reeled in while fishing. Each blueprint a player **reads** (right-click) permanently unlocks one or more crafting recipes. If the blueprint hasn't been learned, the recipe simply won't work — no matter how many ingredients you have.
+
+All blueprints share a single item type, distinguished by NBT data. Adding a new blueprint means dropping in a few JSON files and a texture — no new items to register, no code to touch.
 
 ## Getting Started
 
@@ -24,11 +28,13 @@ Blueprints are scattered across the world in chests, dropped by mobs, or reeled 
 
 ## For Modpack Authors: Creating Custom Blueprints
 
-### Step 1: Blueprint Recipe (JSON)
+### Locking Recipes
 
-Blueprint-locked recipes use the `butdaysblueprint:blueprint` type. The locked recipe supports **shaped** and **shapeless** crafting recipes.
+There are two ways to lock a recipe behind blueprints — choose whichever fits your use case:
 
-Create under `/data/<your_namespace>/recipes/<name>.json`:
+**Option A: Blueprint Recipe JSON** — Use `butdaysblueprint:blueprint` as the recipe type. Embed the target recipe directly. Supports **shaped** and **shapeless** crafting. Best for mod-added recipes or when you want to redefine a vanilla recipe.
+
+Place under `/data/<your_namespace>/recipes/<name>.json`:
 
 **Single blueprint:**
 ```json
@@ -91,9 +97,9 @@ Create under `/data/<your_namespace>/recipes/<name>.json`:
 }
 ```
 
-### Step 2: Lock Vanilla Recipes (Optional)
+**Option B: `blueprint_locks.json`** — Lock existing vanilla recipes by ID, without redefining them. Best when you only need to gate vanilla recipes and don't want to touch recipe JSONs.
 
-Use `blueprint_locks.json` to lock vanilla recipes without redefining them:
+Place under `/data/<your_namespace>/blueprint_locks.json`:
 
 ```json
 {
@@ -120,7 +126,7 @@ Use `blueprint_locks.json` to lock vanilla recipes without redefining them:
 - `locks` — single blueprint → list of recipe IDs to lock
 - `multi_locks` — multiple blueprints → all must be learned to unlock these recipes
 
-### Step 3: Blueprint Acquisition (Loot Modifier)
+### Blueprint Acquisition (Loot Modifier)
 
 Add to `/data/forge/loot_modifiers/global_loot_modifiers.json`:
 ```json
@@ -154,7 +160,7 @@ Create the loot modifier `/data/<your_namespace>/loot_modifiers/<name>.json`:
 - `loot_table_id` — the loot table to inject into (supports mob drops, fishing, archaeology, and chests)
 - `chance` — drop probability (0.0 to 1.0)
 
-### Step 4: Blueprint List & Assets
+### Blueprint List & Assets
 
 Register your blueprint in `/assets/<your_namespace>/blueprint/list.json`:
 ```json
