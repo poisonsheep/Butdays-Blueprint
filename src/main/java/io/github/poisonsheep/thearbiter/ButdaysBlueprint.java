@@ -14,6 +14,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
 @Mod(ButdaysBlueprint.MODID)
@@ -25,8 +26,10 @@ public class ButdaysBlueprint
     /** Network protocol version — only change when packet structure changes */
     public static final String NETWORK_VERSION = "1";
 
-    public ButdaysBlueprint(IEventBus modEventBus)
+    @SuppressWarnings("removal")
+    public ButdaysBlueprint()
     {
+        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         MinecraftForge.EVENT_BUS.register(new ForgeEvent());
         MinecraftForge.EVENT_BUS.register(new LearnEvent());
         modEventBus.addListener(this::setup);
