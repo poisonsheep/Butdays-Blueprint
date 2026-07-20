@@ -1,56 +1,57 @@
 # Butday's Blueprint
 
-*Unlock the recipe with blueprints — like the game Don't Starve.*
+*Unlock recipes with blueprints — inspired by Don't Starve.*
 
 ## Overview
 
-Blueprints are scattered across the world in chests and loot tables. Each blueprint you **read** (right-click) permanently unlocks a recipe. The twist: the recipe simply won't work until the blueprint is learned — no matter how many ingredients you have.
-
-18 themed blueprints are hidden in different structures, from the Toolsmith's house to the End City, each unlocking vanilla or custom recipes. Collect them all in your **Blueprint Anthology**.
+Blueprints are scattered across the world in chests, dropped by mobs, or reeled in while fishing. Each blueprint you **read** (right-click) permanently unlocks one or more crafting recipes. If you haven't learned the required blueprint, the recipe simply won't work — no matter how many ingredients you have.
 
 ## Getting Started
 
-1. **Get the Anthology** — Sleep with a **Book** in your hand. You'll receive the *Blueprint Anthology* and the *Dream Again* advancement.
-2. **Find Blueprints** — Explore the world. Blueprints are hidden in chests: dungeons, temples, bastions, strongholds, ancient cities, and more.
+1. **Get the Anthology** — The first time you sleep, you'll receive the *Blueprint Anthology* and a dreamlike vision. If you ever lose it, sleep again while holding a **Book** to remake one.
+2. **Find Blueprints** — Explore the world. Blueprints can be found in structure chests (dungeons, temples, bastions, strongholds, ancient cities, and more), dropped by certain mobs, or obtained from fishing and archaeology.
 3. **Read & Learn** — Right-click a blueprint to learn it. The blueprint is consumed and you get a piece of paper back.
 4. **Craft** — Learned recipes are now available at the crafting table.
-5. **Review** — Open the Anthology to browse all learned blueprints and their associated recipes. Use `JEI` to see which blueprints a locked recipe requires.
-
-> **Tip**: Hold `Shift` while viewing the Anthology to see only learned blueprints.
+5. **Review** — Open the Anthology to browse all learned blueprints: their descriptions, acquisition hints, and unlocked recipes. With JEI installed, locked recipes will show which blueprints are required.
 
 ## Features
 
-- **18 unique blueprints**, each with lore-rich flavor text (English + Chinese)
-- **Recipe locking** — Crafting recipes are gated behind blueprint knowledge
-- **Multi-blueprint recipes** — Some recipes require learning 2+ blueprints
-- **Blueprint Anthology** — In-game compendium to browse learned blueprints and recipes
-- **JEI integration** — Locked recipes show required blueprints in the recipe viewer
-- **Full network sync** — Blueprint progress persists across death, dimension change, and reconnect
-- **Data-driven** — Everything is configurable via JSON — perfect for modpack authors
+- **Highly customizable** — Every blueprint and its textures, descriptions, and recipes are data-driven. Modpack authors can add, remove, or modify everything via JSON.
+- **Flexible recipe locking** — One blueprint can unlock multiple recipes; one recipe can require multiple blueprints. Both shaped and shapeless crafting are supported.
+- **Blueprint Anthology** — An in-game compendium that tracks learned blueprints and lets you browse their descriptions, unlock conditions, and associated recipes.
+- **JEI integration** — Locked recipes show required blueprints directly in the recipe viewer.
+- **Full network sync** — Blueprint progress persists across death, dimension change, and reconnect.
 
 ## For Modpack Authors: Creating Custom Blueprints
 
 ### Step 1: Blueprint Recipe (JSON)
 
-Create a blueprint recipe under `/data/<your_namespace>/recipes/<name>.json`:
+Blueprint-locked recipes use the `butdaysblueprint:blueprint` type. The locked recipe supports **shaped** and **shapeless** crafting recipes.
 
-**Single blueprint unlock:**
+Create under `/data/<your_namespace>/recipes/<name>.json`:
+
+**Single blueprint:**
 ```json
 {
+  "_comment": "Example: reading drawing_ability unlocks name tag crafting",
   "type": "butdaysblueprint:blueprint",
-  "blueprint": "butdaysblueprint:blueprint/engineer_manuscript",
+  "blueprint": "butdaysblueprint:blueprint/drawing_ability",
   "recipe": {
-    "type": "minecraft:crafting_shaped",
-    "pattern": ["III", "I I", "III"],
-    "key": { "I": { "item": "minecraft:iron_ingot" } },
-    "result": { "item": "minecraft:anvil" }
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+      { "item": "minecraft:paper" },
+      { "item": "minecraft:string" },
+      { "item": "minecraft:iron_nugget" }
+    ],
+    "result": { "item": "minecraft:name_tag" }
   }
 }
 ```
 
-**Multi-blueprint unlock (all must be learned):**
+**Multiple blueprints (all required):**
 ```json
 {
+  "_comment": "Example: atlantis + engineer_manual → trident crafting",
   "type": "butdaysblueprint:blueprint",
   "blueprints": [
     "butdaysblueprint:blueprint/residual_chapter_of_atlantis",
@@ -68,11 +69,31 @@ Create a blueprint recipe under `/data/<your_namespace>/recipes/<name>.json`:
 }
 ```
 
-> The inner `"recipe"` can use any vanilla or modded recipe type (`crafting_shaped`, `crafting_shapeless`, `smithing`, etc.).
+**Triple blueprint:**
+```json
+{
+  "_comment": "Example: 3 blueprints required to craft wither skeleton skulls",
+  "type": "butdaysblueprint:blueprint",
+  "blueprints": [
+    "butdaysblueprint:blueprint/contaminated_code",
+    "butdaysblueprint:blueprint/fading_in_the_shadow",
+    "butdaysblueprint:blueprint/burning_wish"
+  ],
+  "recipe": {
+    "type": "minecraft:crafting_shaped",
+    "pattern": ["BBB", "BSB", "BBB"],
+    "key": {
+      "B": { "item": "minecraft:bone" },
+      "S": { "item": "minecraft:soul_sand" }
+    },
+    "result": { "item": "minecraft:wither_skeleton_skull", "count": 3 }
+  }
+}
+```
 
 ### Step 2: Lock Vanilla Recipes (Optional)
 
-For vanilla recipes you don't want to redefine, use `blueprint_locks.json`:
+Use `blueprint_locks.json` to lock vanilla recipes without redefining them:
 
 ```json
 {
@@ -80,9 +101,6 @@ For vanilla recipes you don't want to redefine, use `blueprint_locks.json`:
     "butdaysblueprint:blueprint/engineer_manuscript": [
       "minecraft:iron_pickaxe",
       "minecraft:iron_axe"
-    ],
-    "butdaysblueprint:blueprint/contaminated_code": [
-      "minecraft:ender_eye"
     ]
   },
   "multi_locks": [
@@ -100,7 +118,7 @@ For vanilla recipes you don't want to redefine, use `blueprint_locks.json`:
 ```
 
 - `locks` — single blueprint → list of recipe IDs to lock
-- `multi_locks` — array of blueprint sets → list of recipes that require ALL specified blueprints
+- `multi_locks` — multiple blueprints → all must be learned to unlock these recipes
 
 ### Step 3: Blueprint Acquisition (Loot Modifier)
 
@@ -119,19 +137,24 @@ Create the loot modifier `/data/<your_namespace>/loot_modifiers/<name>.json`:
 {
   "type": "butdaysblueprint:blueprint_modifier",
   "conditions": [
-    { "condition": "forge:loot_table_id", "loot_table_id": "minecraft:chests/village/village_toolsmith" },
-    { "condition": "minecraft:random_chance", "chance": 0.50 }
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "minecraft:chests/village/village_toolsmith"
+    },
+    {
+      "condition": "minecraft:random_chance",
+      "chance": 0.50
+    }
   ],
   "item": "butdaysblueprint:blueprint",
-  "blueprint": "yourmod:blueprint/my_blueprint"
+  "blueprint": "butdaysblueprint:blueprint/engineer_manuscript"
 }
 ```
 
-- `loot_table_id` — the vanilla/modded loot table to inject into
+- `loot_table_id` — the loot table to inject into (supports mob drops, fishing, archaeology, and chests)
 - `chance` — drop probability (0.0 to 1.0)
-- `blueprint` — the blueprint ID to spawn
 
-### Step 4: Blueprint List
+### Step 4: Blueprint List & Assets
 
 Register your blueprint in `/assets/<your_namespace>/blueprint/list.json`:
 ```json
@@ -142,11 +165,7 @@ Register your blueprint in `/assets/<your_namespace>/blueprint/list.json`:
 }
 ```
 
-> The base mod's list is at `assets/butdaysblueprint/blueprint/list.json`. Modpack authors can create their own — all loaded lists are merged at runtime.
-
-### Step 5: Localization
-
-Add to `/assets/<your_namespace>/lang/en_us.json`:
+Add localization to `/assets/<your_namespace>/lang/en_us.json`:
 ```json
 {
   "yourmod.blueprint/my_blueprint": "My Blueprint",
@@ -156,51 +175,4 @@ Add to `/assets/<your_namespace>/lang/en_us.json`:
 }
 ```
 
-### Step 6: Assets
-
-Add textures and models for your blueprint item. See the existing blueprints under `assets/butdaysblueprint/textures/item/blueprint/` and `assets/butdaysblueprint/models/blueprint/` as templates.
-
----
-
-## Built-in Blueprints
-
-| Blueprint | Location | Unlocks |
-|-----------|----------|---------|
-| Engineer Manuscript | Village Toolsmith | Iron tools & armor |
-| Engineer Manual | Stronghold Library | Diamond tools & armor |
-| NASA Tech Blueprint | Stronghold / End City | Redstone components |
-| Contaminated Manuscript | Dungeon / Mansion / Evoker | Enchanting & brewing |
-| Twisted Codex | Crafted (3× Manuscript + Leather) | Eye of Ender |
-| Fading in the Shadow | Wither | Soul items + Beacon |
-| The Lost Chapter of Atlantis | Elder Guardian / Fishing / Archaeology | Conduit & ocean items |
-| Burning Wish | Blaze / Bastion | Fire charge & magma cream |
-| Drawing Ability | Shipwreck | Painting & decorations |
-| Music Producer | Ancient City | Jukebox & note block |
-| Sweet Blueprint | Crafted (Blueprint + Honey) | Cake & sweets |
-| Key to the City | Village Church / Raid | Villager workstations |
-| Bio Program | Jungle Temple | Lead & hay bale |
-| The Sands of Time | Desert Pyramid / Archaeology | Clock |
-| Wormholes on Paper | Ender Dragon | Ender Chest |
-| Kitty Letter | (Modpack-defined) | — |
-| Fake Imperial Edict | (Modpack-defined) | — |
-| Unknown Blueprint | — | Clears learned blueprints |
-
----
-
-## Events
-
-For KubeJS / CraftTweaker integration, the following Forge events are exposed:
-
-- `ReadEvent` — Fired when a player reads a blueprint. Cancel to prevent learning.
-- `LearnEvent` — Fired after a blueprint is successfully learned.
-- `BlueprintEvent` — General blueprint lifecycle event.
-
-## Credits
-
-- Developed by **butday**
-- Inspired by Don't Starve's blueprint system
-- Built on Minecraft Forge 1.20.1
-
-## License
-
-MIT
+Add textures under `/assets/<your_namespace>/textures/item/blueprint/` and models under `/assets/<your_namespace>/models/blueprint/`. See the built-in blueprints as templates.
