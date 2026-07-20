@@ -1,7 +1,7 @@
 package io.github.poisonsheep.thearbiter.event;
 
 import io.github.poisonsheep.thearbiter.ButdaysBlueprint;
-import io.github.poisonsheep.thearbiter.Item.ItemRegistry;
+import io.github.poisonsheep.thearbiter.item.ItemRegistry;
 import io.github.poisonsheep.thearbiter.advancement.AdvancementTriggerRegistry;
 import io.github.poisonsheep.thearbiter.network.packet.BlueprintUpdatePacket;
 import net.minecraft.server.level.ServerPlayer;

@@ -1,7 +1,7 @@
 package io.github.poisonsheep.thearbiter.client.gui;
 
-import io.github.poisonsheep.thearbiter.Item.Blueprint;
-import io.github.poisonsheep.thearbiter.Item.ItemRegistry;
+import io.github.poisonsheep.thearbiter.item.Blueprint;
+import io.github.poisonsheep.thearbiter.item.ItemRegistry;
 import io.github.poisonsheep.thearbiter.client.blueprint.BlueprintList;
 import io.github.poisonsheep.thearbiter.recipe.RecipeDataList;
 import net.minecraft.client.Minecraft;

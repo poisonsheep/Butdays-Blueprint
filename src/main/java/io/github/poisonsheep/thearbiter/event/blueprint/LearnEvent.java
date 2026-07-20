@@ -1,6 +1,6 @@
 package io.github.poisonsheep.thearbiter.event.blueprint;
 
-import io.github.poisonsheep.thearbiter.Item.Blueprint;
+import io.github.poisonsheep.thearbiter.item.Blueprint;
 import io.github.poisonsheep.thearbiter.advancement.AdvancementTriggerRegistry;
 import io.github.poisonsheep.thearbiter.capability.PlayerBlueprint;
 import io.github.poisonsheep.thearbiter.capability.PlayerBlueprintProvider;

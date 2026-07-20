@@ -1,8 +1,8 @@
 package io.github.poisonsheep.thearbiter.compat.jei;
 
 import io.github.poisonsheep.thearbiter.ButdaysBlueprint;
-import io.github.poisonsheep.thearbiter.Item.Blueprint;
-import io.github.poisonsheep.thearbiter.Item.ItemRegistry;
+import io.github.poisonsheep.thearbiter.item.Blueprint;
+import io.github.poisonsheep.thearbiter.item.ItemRegistry;
 import io.github.poisonsheep.thearbiter.client.blueprint.BlueprintList;
 import io.github.poisonsheep.thearbiter.recipe.BlueprintRecipe;
 import mezz.jei.api.IModPlugin;

@@ -12,9 +12,9 @@ import java.util.Optional;
 public class ModNetwork {
     public static final SimpleChannel INSTANCE = NetworkRegistry.newSimpleChannel(
             ResourceLocation.fromNamespaceAndPath(ButdaysBlueprint.MODID, "main"),
-            () -> ButdaysBlueprint.VERSION,
-            ButdaysBlueprint.VERSION::equals,
-            ButdaysBlueprint.VERSION::equals
+            () -> ButdaysBlueprint.NETWORK_VERSION,
+            ButdaysBlueprint.NETWORK_VERSION::equals,
+            ButdaysBlueprint.NETWORK_VERSION::equals
     );
     private static  int PROTOCOL_VERSION = 0;
 

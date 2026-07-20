@@ -1,4 +1,4 @@
-package io.github.poisonsheep.thearbiter.Item;
+package io.github.poisonsheep.thearbiter.item;
 
 import io.github.poisonsheep.thearbiter.client.gui.BlueprintAnthologyScreen;
 import net.minecraft.client.Minecraft;

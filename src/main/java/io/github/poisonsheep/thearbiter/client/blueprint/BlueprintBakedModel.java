@@ -1,6 +1,6 @@
 package io.github.poisonsheep.thearbiter.client.blueprint;
 
-import io.github.poisonsheep.thearbiter.Item.Blueprint;
+import io.github.poisonsheep.thearbiter.item.Blueprint;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.block.model.BakedQuad;

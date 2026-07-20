@@ -1,8 +1,8 @@
 package io.github.poisonsheep.thearbiter.compat.jei;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import io.github.poisonsheep.thearbiter.Item.Blueprint;
-import io.github.poisonsheep.thearbiter.Item.ItemRegistry;
+import io.github.poisonsheep.thearbiter.item.Blueprint;
+import io.github.poisonsheep.thearbiter.item.ItemRegistry;
 import io.github.poisonsheep.thearbiter.capability.PlayerBlueprintProvider;
 import io.github.poisonsheep.thearbiter.recipe.BlueprintRecipe;
 import mezz.jei.api.constants.VanillaTypes;
