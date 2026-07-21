@@ -4,6 +4,8 @@ import io.github.poisonsheep.thearbiter.ButdaysBlueprint;
 import io.github.poisonsheep.thearbiter.capability.PlayerBlueprint;
 import io.github.poisonsheep.thearbiter.capability.PlayerBlueprintProvider;
 import io.github.poisonsheep.thearbiter.event.blueprint.ReadEvent;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.util.RandomSource;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -89,8 +91,15 @@ public class Blueprint extends Item {
             }
         }
         if(level.isClientSide){
-            playSound(player);
-            addParticle();
+            boolean alreadyRead = player.getCapability(PlayerBlueprintProvider.PLAYER_BLUEPRINT_CAPABILITY)
+                    .map(pb -> pb.getBlueprints().contains(name.toString()))
+                    .orElse(false);
+            if (!alreadyRead) {
+                playSound(player);
+                addParticle(level, player);
+            } else {
+                player.playSound(SoundEvents.BOOK_PAGE_TURN, 0.8F, 1.0F);
+            }
         }
         player.getCooldowns().addCooldown(this, 10);
         return InteractionResultHolder.sidedSuccess(stack, level.isClientSide());
@@ -100,6 +109,19 @@ public class Blueprint extends Item {
         player.playSound(SoundEvents.PLAYER_LEVELUP,1.0F,1.0F);
     }
 
-    public void addParticle(){}
+    public void addParticle(Level level, Player player){
+        RandomSource random = level.random;
+        for (int i = 0; i < 20; i++) {
+            double angle = random.nextDouble() * Math.PI * 2;
+            double radius = 0.4 + random.nextDouble() * 0.4;
+            double x = player.getX() + Math.cos(angle) * radius;
+            double z = player.getZ() + Math.sin(angle) * radius;
+            double y = player.getY() + 0.8 + random.nextDouble() * 1.2;
+            level.addParticle(ParticleTypes.END_ROD, x, y, z,
+                    (random.nextDouble() - 0.5) * 0.05,
+                    random.nextDouble() * 0.15,
+                    (random.nextDouble() - 0.5) * 0.05);
+        }
+    }
 
 }
