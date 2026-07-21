@@ -37,7 +37,9 @@ public class BlueprintSerializer implements RecipeSerializer<BlueprintRecipe> {
         // register under each blueprint so anthology search finds it
         for (String bp : blueprints) {
             RecipeData data = new RecipeData(bp, recipe);
-            RecipeDataList.INSTANCE.recipeData.add(data);
+            if (!RecipeDataList.INSTANCE.recipeData.contains(data)) {
+                RecipeDataList.INSTANCE.recipeData.add(data);
+            }
         }
         return new BlueprintRecipe(id, blueprints, (CraftingRecipe) recipe);
     }

@@ -8,9 +8,9 @@
   "message.butdaysblueprint.not_qualified": "You're not qualified",
 
   "butdaysblueprint.blueprint/unknown": "Unknown Blueprint",
-  "butdaysblueprint.blueprint/unknown.description": "§kUnknown blueprint ate your brain",
-  "butdaysblueprint.blueprint/unknown.tooltip": "May this body, bear your pain",
-  "butdaysblueprint.blueprint/unknown.message": "Only the Creator knows his secret",
+  "butdaysblueprint.blueprint/unknown.description": "A debug tool that wipes all learned blueprint knowledge",
+  "butdaysblueprint.blueprint/unknown.tooltip": "Your mind goes blank... all blueprint knowledge has been erased",
+  "butdaysblueprint.blueprint/unknown.message": "Creative only. Not meant for mortal hands.",
 
   "gui.read": "§0Read",
   "gui.unlock": "§0to unlock",
@@ -26,7 +26,7 @@
   "butdaysblueprint.title": "Blueprint Anthology",
   "butdaysblueprint.author": "§othe arbiter",
   "butdaysblueprint.title.preface": "§lPreface",
-  "butdaysblueprint.intro": "The twinkling stars once flowed above the Milky Way. People who claimed to exhaust all the mysteries of the world were also chasing the falling stars in the long river of time. Find those knowledge scattered in this world, they once shone in the distant past.\nWe will see you soon, I hope you won't stand on the opposite side of this world then.",
+  "butdaysblueprint.intro": "I know that I hung on a windy tree nine whole nights, wounded with a spear, given to Odin — myself to myself, on that tree whose roots no man knows. No bread did they give me, nor drink from a horn. I took up the runes, screaming I took them, and fell back from there.\n\nOne word sought another word for me, one deed sought another deed for me.\n— Hávamál",
   "butdaysblueprint.tip.viewBlueprint": "View Blueprint",
 
   "butdaysblueprint.advancements.root.title": "Hidden Gaze",
@@ -35,8 +35,8 @@
   "butdaysblueprint.advancements.the_embodiment_of_dream.description": "Let me express my gratitude",
   "butdaysblueprint.advancements.transform.title": "§6Transform",
   "butdaysblueprint.advancements.transform.description": "§6Witness your power",
-  "butdaysblueprint.advancements.enthroned.title": "§6Take the crown",
-  "butdaysblueprint.advancements.enthroned.description": "Divine mandate, supreme authority!",
+  "butdaysblueprint.advancements.enthroned.title": "§6Fimbulwinter",
+  "butdaysblueprint.advancements.enthroned.description": "All wisdom is yours. The long winter begins — and you walk into it, knowing.",
   "butdaysblueprint.advancements.anthology.title": "Weary Traveler",
   "butdaysblueprint.advancements.anthology.description": "In your dreams, you heard the whispers of knowledge",
   "butdaysblueprint.advancements.dream_again.title": "Dream Again",
@@ -50,17 +50,17 @@
 
   "butdaysblueprint.blueprint/drawing_ability": "§dDrawing Ability",
   "butdaysblueprint.blueprint/drawing_ability.description": "Pain will pass, beauty will remain",
-  "butdaysblueprint.blueprint/drawing_ability.tooltip": "§bIt's like wearing glasses, you see more",
+  "butdaysblueprint.blueprint/drawing_ability.tooltip": "It's like wearing glasses, you see more",
   "butdaysblueprint.blueprint/drawing_ability.message": "Farewell, Rose! Jack and his painting secrets sank beneath the waves...",
 
   "butdaysblueprint.blueprint/music_producer": "§eMusic Producer Essentials",
   "butdaysblueprint.blueprint/music_producer.description": "Actually we don't have to resort to violence",
-  "butdaysblueprint.blueprint/music_producer.tooltip": "§eYou learned the singing skills of mermaids",
+  "butdaysblueprint.blueprint/music_producer.tooltip": "You learned the singing skills of mermaids",
   "butdaysblueprint.blueprint/music_producer.message": "Go ask the mermaids for it, if they don't give it, beat them until they do",
 
   "butdaysblueprint.blueprint/contaminated_parchment_paper": "§4Contaminated Manuscript",
   "butdaysblueprint.blueprint/contaminated_parchment_paper.description": "Please tell me the truth",
-  "butdaysblueprint.blueprint/contaminated_parchment_paper.tooltip": "§5Evil is fermenting in your mind",
+  "butdaysblueprint.blueprint/contaminated_parchment_paper.tooltip": "Evil is fermenting in your mind",
   "butdaysblueprint.blueprint/contaminated_parchment_paper.message": "Dungeons and woodland mansions always have creepy stuff like this. It's in the script.",
 
   "butdaysblueprint.blueprint/engineer_manual": "Engineer Manual",
@@ -124,6 +124,6 @@
 
   "butdaysblueprint.blueprint/contaminated_code": "§4Twisted Codex",
   "butdaysblueprint.blueprint/contaminated_code.description": "There is no holy light, only... power!",
-  "butdaysblueprint.blueprint/contaminated_code.tooltip": "§oForbidden knowledge screams in your mind... your sanity crumbles",
+  "butdaysblueprint.blueprint/contaminated_code.tooltip": "Forbidden knowledge screams in your mind... your sanity crumbles",
   "butdaysblueprint.blueprint/contaminated_code.message": "Piece together the contaminated fragments"
 }

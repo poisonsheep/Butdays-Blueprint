@@ -8,9 +8,9 @@
   "message.butdaysblueprint.not_qualified": "你还不够资格",
 
   "butdaysblueprint.blueprint/unknown": "未知蓝图",
-  "butdaysblueprint.blueprint/unknown.description": "§k未知蓝图吃掉了你的脑子",
-  "butdaysblueprint.blueprint/unknown.tooltip": "愿以此身，受你之痛",
-  "butdaysblueprint.blueprint/unknown.message": "只有创世之大能知道他的秘密",
+  "butdaysblueprint.blueprint/unknown.description": "抹除所有已学蓝图知识的调试工具",
+  "butdaysblueprint.blueprint/unknown.tooltip": "脑海一片空白……所有蓝图知识已被抹除",
+  "butdaysblueprint.blueprint/unknown.message": "创造模式限定，非凡人之手可及",
 
   "gui.read": "§0阅读",
   "gui.unlock": "§0以解锁",
@@ -26,7 +26,7 @@
   "butdaysblueprint.title": "Blueprint Anthology",
   "butdaysblueprint.author": "§othe arbiter",
   "butdaysblueprint.title.preface": "§l序",
-  "butdaysblueprint.intro": "闪烁的星辰曾在银河之上流淌，自诩穷尽世间一切奥秘的人，在时间的长河中也追逐着星星陨落。找到那些散落在这个世上的知识，它们曾在遥远的过去熠熠生辉。\n不久后我们会再见，希望那时你不会站在这个世界的对立面。",
+  "butdaysblueprint.intro": "我知道，我曾悬于风树之上整整九夜，矛刺己身，祭献奥丁——以我献我，在那无人知晓根系何来的树上。没有面包充饥，没有角杯解渴。我攫取符文，尖啸中攫取，而后坠落。\n\n一字寻一字，一行觅一行。\n——《高者之言》",
   "butdaysblueprint.tip.viewBlueprint": "查看蓝图",
 
   "butdaysblueprint.advancements.root.title": "隐匿的注视",
@@ -35,8 +35,8 @@
   "butdaysblueprint.advancements.the_embodiment_of_dream.description": "请呈我谢意",
   "butdaysblueprint.advancements.transform.title": "§6蜕变",
   "butdaysblueprint.advancements.transform.description": "见证你的力量",
-  "butdaysblueprint.advancements.enthroned.title": "§6封狼居胥",
-  "butdaysblueprint.advancements.enthroned.description": "天授旨意，无上权柄!",
+  "butdaysblueprint.advancements.enthroned.title": "§6芬布尔之冬",
+  "butdaysblueprint.advancements.enthroned.description": "智慧尽归于你。长冬已至——你带着全知，踏入其中。",
   "butdaysblueprint.advancements.the_beginning_of_the_journey.title": "旅途的开始",
   "butdaysblueprint.advancements.the_beginning_of_the_journey.description": "犹如醍醐灌顶",
   "butdaysblueprint.advancements.anthology.title": "疲惫的旅人",
@@ -50,17 +50,17 @@
 
   "butdaysblueprint.blueprint/drawing_ability": "§d绘画才能",
   "butdaysblueprint.blueprint/drawing_ability.description": "痛苦会过去，美会留下",
-  "butdaysblueprint.blueprint/drawing_ability.tooltip": "§b就像戴上眼镜，你看到了更多",
+  "butdaysblueprint.blueprint/drawing_ability.tooltip": "就像戴上眼镜，你看到了更多",
   "butdaysblueprint.blueprint/drawing_ability.message": "永别了！罗斯。说完杰克和他的绘画秘籍慢慢淹没在海水中",
 
   "butdaysblueprint.blueprint/music_producer": "§e音乐制作人必修课",
   "butdaysblueprint.blueprint/music_producer.description": "引导人走进灵魂的秘境",
-  "butdaysblueprint.blueprint/music_producer.tooltip": "§e你感受到韵律的脚步",
+  "butdaysblueprint.blueprint/music_producer.tooltip": "你感受到韵律的脚步",
   "butdaysblueprint.blueprint/music_producer.message": "远古城市的寂静中，回荡着失落乐章的余音",
 
   "butdaysblueprint.blueprint/contaminated_parchment_paper": "§4被污染的手稿",
   "butdaysblueprint.blueprint/contaminated_parchment_paper.description": "请告诫我真理",
-  "butdaysblueprint.blueprint/contaminated_parchment_paper.tooltip": "§5邪恶在你的脑海里发酵",
+  "butdaysblueprint.blueprint/contaminated_parchment_paper.tooltip": "邪恶在你的脑海里发酵",
   "butdaysblueprint.blueprint/contaminated_parchment_paper.message": "地牢和林地府邸总会有这种阴森的东西，剧本通常是这么写的",
 
   "butdaysblueprint.blueprint/engineer_manual": "工程师手册",
@@ -125,6 +125,6 @@
 
   "butdaysblueprint.blueprint/contaminated_code": "§4扭曲法典",
   "butdaysblueprint.blueprint/contaminated_code.description": "哪有什么圣光，只有。。。力量！",
-  "butdaysblueprint.blueprint/contaminated_code.tooltip": "§o禁忌的知识在脑海中尖叫……你的理智摇摇欲坠",
+  "butdaysblueprint.blueprint/contaminated_code.tooltip": "禁忌的知识在脑海中尖叫……你的理智摇摇欲坠",
   "butdaysblueprint.blueprint/contaminated_code.message": "将污染的碎片拼凑"
 }

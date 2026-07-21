@@ -25,6 +25,7 @@ public class BlueprintRegistry {
                     if (resource.isPresent()) {
                         InputStreamReader reader = new InputStreamReader(resource.get().open());
                         BlueprintList list = JsonUtil.INSTANCE.noExpose.fromJson(reader, BlueprintList.class);
+                        BlueprintList.INSTANCE.blueprints.clear();
                         BlueprintList.INSTANCE.blueprints.addAll(list.blueprints);
                     }
                 }

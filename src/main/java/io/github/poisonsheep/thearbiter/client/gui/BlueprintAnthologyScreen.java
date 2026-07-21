@@ -41,20 +41,21 @@ public class BlueprintAnthologyScreen extends BasicBookScreen {
     public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTick) {
         super.render(guiGraphics, mouseX, mouseY, partialTick);
         renderLogo(guiGraphics);
-        writeTitle(guiGraphics, preface, this.leftPos + Math.round(this.IMAGE_WIDTH * 3 / 4) - 14, this.bottomPos + 34, 2F);
-        writeTitle(guiGraphics, title,this.leftPos + 30, this.bottomPos + this.IMAGE_HEIGHT / 2 - 4, 0.9F);
-        writeTitle(guiGraphics, author,this.leftPos + 56, this.bottomPos + this.IMAGE_HEIGHT / 2 + 4, 0.6F);
+        writeTitle(guiGraphics, preface, this.leftPos + Math.round(this.IMAGE_WIDTH * 3 / 4) - 14, this.bottomPos + 34, 2F, true);
+        writeTitle(guiGraphics, title,this.leftPos + 30, this.bottomPos + this.IMAGE_HEIGHT / 2 - 4, 0.9F, false);
+        writeTitle(guiGraphics, author,this.leftPos + 56, this.bottomPos + this.IMAGE_HEIGHT / 2 + 4, 0.6F, false);
     }
 
     protected void renderLogo(GuiGraphics guiGraphics) {
         float toolTipMaxWidthScaled = this.toolTipMaxWidth;
         guiGraphics.blit(BOOK_TEXTURES, Math.round(this.leftPos + (IMAGE_WIDTH / 2 - toolTipMaxWidthScaled) / 2) + 30, Math.round(this.bottomPos + 25), 0, 64, 64, 64);
     }
-    protected void writeTitle(GuiGraphics guiGraphics, Component component, int x, int y, float scale) {
+    protected void writeTitle(GuiGraphics guiGraphics, Component component, int x, int y, float scale, boolean centered) {
         guiGraphics.pose().pushPose();
         guiGraphics.pose().translate(x, y, 0);
         guiGraphics.pose().scale(scale, scale, 1.0F);
-        this.font.drawInBatch(component.getVisualOrderText(), 0, 0, 0x000000, false,
+        float xOffset = centered ? -this.font.width(component) / 2f : 0;
+        this.font.drawInBatch(component.getVisualOrderText(), xOffset, 0, 0x000000, false,
             guiGraphics.pose().last().pose(), guiGraphics.bufferSource(),
             Font.DisplayMode.NORMAL, 0, 15728880);
         guiGraphics.pose().popPose();

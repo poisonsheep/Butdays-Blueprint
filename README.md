@@ -12,7 +12,7 @@ All blueprints share a single item type, distinguished by NBT data. Adding a new
 
 ## Getting Started
 
-1. **Get the Anthology** — The first time you sleep, you'll receive the *Blueprint Anthology* and a dreamlike vision. If you ever lose it, sleep again while holding a **Book** to remake one.
+1. **Get the Anthology** — The first time you sleep, you'll receive the *Blueprint Anthology*. If you ever lose it, sleep again while holding a **Book** to remake one.
 2. **Find Blueprints** — Explore the world. Blueprints can be found in structure chests (dungeons, temples, bastions, strongholds, ancient cities, and more), dropped by certain mobs, or obtained from fishing and archaeology.
 3. **Read & Learn** — Right-click a blueprint to learn it. The blueprint is consumed and you get a piece of paper back.
 4. **Craft** — Learned recipes are now available at the crafting table.
