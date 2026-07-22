@@ -1,8 +1,12 @@
 # Butday's Blueprint
 
+![](images/logo.png)
+
 *A data-driven blueprint recipe engine for modpack authors — inspired by Don't Starve.*
 
 ## Overview
+
+![](images/游戏内展示.png)
 
 Butday's Blueprint is first and foremost a **modpack author's tool**. It provides a complete framework for gating crafting recipes behind blueprint knowledge, with zero Java coding required. Everything — blueprints, their textures, descriptions, unlock conditions, and loot sources — is driven by JSON data.
 
@@ -18,12 +22,19 @@ All blueprints share a single item type, distinguished by NBT data. Adding a new
 4. **Craft** — Learned recipes are now available at the crafting table.
 5. **Review** — Open the Anthology to browse all learned blueprints: their descriptions, acquisition hints, and unlocked recipes. With JEI installed, locked recipes will show which blueprints are required.
 
+![](images/蓝图信息.png)
+
 ## Features
 
 - **Highly customizable** — Every blueprint and its textures, descriptions, and recipes are data-driven. Modpack authors can add, remove, or modify everything via JSON.
 - **Flexible recipe locking** — One blueprint can unlock multiple recipes; one recipe can require multiple blueprints. Both shaped and shapeless crafting are supported.
 - **Blueprint Anthology** — An in-game compendium that tracks learned blueprints and lets you browse their descriptions, unlock conditions, and associated recipes.
+
+![](images/蓝图陈列.png)
+
 - **JEI integration** — Locked recipes show required blueprints directly in the recipe viewer.
+
+![](images/jei界面.png)
 - **Full network sync** — Blueprint progress persists across death, dimension change, and reconnect.
 
 ## For Modpack Authors: Creating Custom Blueprints
