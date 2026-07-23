@@ -14,6 +14,8 @@ Blueprints are scattered across the world in chests, dropped by mobs, or reeled 
 
 All blueprints share a single item type, distinguished by NBT data. Adding a new blueprint means dropping in a few JSON files and a texture — no new items to register, no code to touch.
 
+> **From the ashes of [The Arbiter](https://github.com/poisonsheep/The-Arbiter)** — this mod began as the blueprint mechanic extracted from a larger, now-discontinued project. The Arbiter is gone, but the blueprints survived.
+
 ## Getting Started
 
 1. **Get the Anthology** — The first time you sleep, you'll receive the *Blueprint Anthology*. If you ever lose it, sleep again while holding a **Book** to remake one.
