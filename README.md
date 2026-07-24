@@ -41,7 +41,13 @@ All blueprints share a single item type, distinguished by NBT data. Adding a new
 
 ## For Modpack Authors: Creating Custom Blueprints
 
+> Blueprint configuration is split across two parts:
+> - **Datapack** (`data/`) — recipes, loot tables, lock configuration
+> - **Resource Pack** (`assets/`) — textures, models, localization
+
 ### Locking Recipes
+
+**> Datapack — `data/`**
 
 There are two ways to lock a recipe behind blueprints — choose whichever fits your use case:
 
@@ -141,6 +147,8 @@ Place under `/data/<your_namespace>/blueprint_locks.json`:
 
 ### Blueprint Acquisition (Loot Modifier)
 
+**> Datapack — `data/`**
+
 Add to `/data/forge/loot_modifiers/global_loot_modifiers.json`:
 ```json
 {
@@ -173,25 +181,64 @@ Create the loot modifier `/data/<your_namespace>/loot_modifiers/<name>.json`:
 - `loot_table_id` — the loot table to inject into (supports mob drops, fishing, archaeology, and chests)
 - `chance` — drop probability (0.0 to 1.0)
 
-### Blueprint List & Assets
+> **Note**: `<your_namespace>` throughout this guide refers to the namespace used in your datapack or resource pack — for example `yourmodpack` or `my_custom_stuff`. It does **not** have to match any mod ID. Both sides (datapack and resource pack) must use the same namespace for your blueprints.
 
-Register your blueprint in `/assets/<your_namespace>/blueprint/list.json`:
+---
+
+### Resource Pack Configuration
+
+**> Resource Pack — `assets/`**
+
+In addition to the datapack files above, you need a resource pack to give your blueprints a name, icon, and description.
+
+#### 1. Register Your Blueprint
+
+`/assets/<your_namespace>/blueprint/list.json`:
 ```json
 {
   "blueprints": [
-    "yourmod:blueprint/my_blueprint"
+    "<your_namespace>:blueprint/my_blueprint"
   ]
 }
 ```
+The namespace here **must match** the namespace used in your datapack recipe files.
 
-Add localization to `/assets/<your_namespace>/lang/en_us.json`:
+#### 2. Add Localization
+
+`/assets/<your_namespace>/lang/en_us.json`:
 ```json
 {
-  "yourmod.blueprint/my_blueprint": "My Blueprint",
-  "yourmod.blueprint/my_blueprint.description": "A mysterious blueprint",
-  "yourmod.blueprint/my_blueprint.tooltip": "You learned its secrets",
-  "yourmod.blueprint/my_blueprint.message": "Found in desert pyramids"
+  "<your_namespace>.blueprint/my_blueprint": "My Blueprint",
+  "<your_namespace>.blueprint/my_blueprint.description": "A mysterious blueprint",
+  "<your_namespace>.blueprint/my_blueprint.tooltip": "You learned its secrets",
+  "<your_namespace>.blueprint/my_blueprint.message": "Found in desert pyramids"
 }
 ```
 
-Add textures under `/assets/<your_namespace>/textures/item/blueprint/` and models under `/assets/<your_namespace>/models/blueprint/`. See the built-in blueprints as templates.
+| key | shown where |
+|---|---|
+| `.blueprint/<id>` | Blueprint name (item tooltip and anthology) |
+| `.blueprint/<id>.description` | Item hover text |
+| `.blueprint/<id>.tooltip` | System message shown after reading |
+| `.blueprint/<id>.message` | Anthology detail page (acquisition hint) |
+
+#### 3. Create the Item Model
+
+`/assets/<your_namespace>/models/blueprint/my_blueprint.json`:
+```json
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "<your_namespace>:item/blueprint/my_blueprint"
+  }
+}
+```
+- `parent: "item/generated"` — uses Minecraft's default 2D item template
+- `layer0` — points to your texture file (omit the `textures/` prefix and `.png` extension)
+
+#### 4. Add the Texture
+
+Place your 16×16 PNG at:
+`/assets/<your_namespace>/textures/item/blueprint/my_blueprint.png`
+
+See the `assets/butdaysblueprint/textures/item/blueprint/` folder for built-in examples.
